@@ -10,8 +10,11 @@ public class Main {
     public static void main(String[] args) {
 
         frame.setBounds(0, 0, 600, 600);
+        frame.setResizable(false);
         MyPanel panel = new MyPanel();
+        MyMouseListener listen = new MyMouseListener();
 
+        panel.addMouseListener(listen);
         frame.add(panel);
 
         frame.setVisible(true);
