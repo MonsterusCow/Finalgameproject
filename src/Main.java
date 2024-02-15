@@ -7,9 +7,12 @@ import java.util.EventListener;
 
 public class Main {
     static JFrame frame = new JFrame();
+    static int startcordx = 0;
+    static int startcordy = 0;
     public static void main(String[] args) {
 
-        frame.setBounds(0, 0, 600, 600);
+
+        frame.setBounds(startcordx, startcordy, 600, 500);
         frame.setResizable(false);
         MyPanel panel = new MyPanel();
         MyMouseListener listen = new MyMouseListener();
