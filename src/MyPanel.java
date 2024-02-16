@@ -10,14 +10,14 @@ import java.lang.*;
 
 public class MyPanel extends JPanel implements ImageObserver{
 
-    static double mxp;
-    static double myp;
     static double size = 50.0;
     BufferedImage arrow;
+    static double arrowDirection;
+    static int updownAmo = 1;
+    static int lefrigAmo = 0;
+    static int a = 1;
+    static int b = 1;
 
-    //constuctor
-//    static ArrayList<Double> xs = new ArrayList(1);
-//    static ArrayList<Double> ys = new ArrayList(1);
     static ArrayList<Block> blocks = new ArrayList<>(1);
     static ArrayList<Double> accel = new ArrayList<>(1);
 
@@ -40,21 +40,21 @@ public class MyPanel extends JPanel implements ImageObserver{
         //Deletion--------------------------------------------------------------------------
 
         for (int i = 0; i < blocks.size(); i++) {
-            if(blocks.get(i).y[0] >= Main.frame.getHeight()+100) {
+            if (blocks.get(i).y[0] >= Main.frame.getHeight() + 100) {
                 blocks.remove(i);
                 System.out.println("removed");
             } else {
-                if (blocks.get(i).y[1] >= Main.frame.getHeight()+100) {
+                if (blocks.get(i).y[1] >= Main.frame.getHeight() + 100) {
                     blocks.remove(i);
                     System.out.println("removed");
                     break;
                 } else {
-                    if (blocks.get(i).y[2] >= Main.frame.getHeight()+100) {
+                    if (blocks.get(i).y[2] >= Main.frame.getHeight() + 100) {
                         blocks.remove(i);
                         System.out.println("removed");
                         break;
                     } else {
-                        if (blocks.get(i).y[3] >= Main.frame.getHeight()+100) {
+                        if (blocks.get(i).y[3] >= Main.frame.getHeight() + 100) {
                             blocks.remove(i);
                             System.out.println("removed");
                             break;
@@ -66,10 +66,10 @@ public class MyPanel extends JPanel implements ImageObserver{
 
         //Drawing--------------------------------------------------------------------------
 
-            for (int i = 0; i < blocks.size(); i++) {
-                g.setColor(Color.BLACK);
-                g.fillPolygon(blocks.get(i).getXArray(),blocks.get(i).getYArray(), 4);
-            }
+        for (int i = 0; i < blocks.size(); i++) {
+            g.setColor(Color.BLACK);
+            g.fillPolygon(blocks.get(i).getXArray(), blocks.get(i).getYArray(), 4);
+        }
 
         //Putting frame back--------------------------------------------------------------------------
 
@@ -77,29 +77,62 @@ public class MyPanel extends JPanel implements ImageObserver{
 //                Main.frame.setBounds(Main.startcordx, Main.startcordy, 600, 600);
 //            }
 
-        //Try--------------------------------------------------------------------------
-
-            try {
-            Thread.sleep(1);
-        } catch (Exception e) {
-                System.out.println(e);
-            }
-
         //gravity--------------------------------------------------------------------------
         for (int i = 0; i < blocks.size(); i++) {
-            blocks.get(i).y[0] += 1;
-            blocks.get(i).y[1] += 1;
-            blocks.get(i).y[2] += 1;
-            blocks.get(i).y[3] += 1;
+            blocks.get(i).y[0] += updownAmo;
+            blocks.get(i).y[1] += updownAmo;
+            blocks.get(i).y[2] += updownAmo;
+            blocks.get(i).y[3] += updownAmo;
+            blocks.get(i).x[0] += lefrigAmo;
+            blocks.get(i).x[1] += lefrigAmo;
+            blocks.get(i).x[2] += lefrigAmo;
+            blocks.get(i).x[3] += lefrigAmo;
         }
         //arrow--------------------------------------------------------------------------
 
         try {
             arrow = ImageIO.read(new File("Images/arrow.png"));
         } catch (IOException e) {
-        e.printStackTrace();
-    }
-        g.drawImage(arrow, (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()), MouseInfo.getPointerInfo().getLocation().y - Main.frame.getY(), this);
+            e.printStackTrace();
+        }
+        g.drawImage(arrow, (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()) - arrow.getWidth() / 2, (MouseInfo.getPointerInfo().getLocation().y - Main.frame.getY()) - (arrow.getHeight() / 2 + 20), this);
+
+        //keypresses--------------------------------------------------------------------------
+
+
+        if (MyKeyListener.keydown) {
+            if (updownAmo <= -1) {
+                a = 0;
+            }
+            if (updownAmo >= 1) {
+                a = 1;
+            }
+            if (a == 1) {
+                updownAmo -= .05;
+            } else {
+                updownAmo += .05;
+            }
+
+            if (lefrigAmo <= -1) {
+                b = 0;
+            }
+            if (lefrigAmo >= 1) {
+                b = 1;
+            }
+            if (b == 1) {
+                lefrigAmo -= .05;
+            } else {
+                lefrigAmo += .05;
+            }
+        }
+
+        //Trywait (end)--------------------------------------------------------------------------
+
+        try {
+            Thread.sleep(3);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
        //repaint--------------------------------------------------------------------------
         repaint();

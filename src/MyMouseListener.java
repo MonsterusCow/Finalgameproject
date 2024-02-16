@@ -11,12 +11,10 @@ public class MyMouseListener implements MouseListener {
     public void mousePressed(MouseEvent e) {
         isdown = true;
         count++;
-//        System.out.println("clicked " + count + isdown);
     }
     @Override
     public void mouseReleased(MouseEvent e) {
         isdown = false;
-//        System.out.println("released " + count + isdown);
     }
     @Override
     public void mouseEntered(MouseEvent e) {}

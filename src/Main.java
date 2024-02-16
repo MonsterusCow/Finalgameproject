@@ -16,8 +16,12 @@ public class Main {
         frame.setResizable(false);
         MyPanel panel = new MyPanel();
         MyMouseListener listen = new MyMouseListener();
+        MyKeyListener keylisten = new MyKeyListener();
 
+        panel.setFocusable(true);
         panel.addMouseListener(listen);
+        panel.addKeyListener(keylisten);
+
         frame.add(panel);
 
         frame.setVisible(true);
