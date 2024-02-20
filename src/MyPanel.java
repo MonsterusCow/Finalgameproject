@@ -13,10 +13,6 @@ public class MyPanel extends JPanel implements ImageObserver{
     static double size = 50.0;
     BufferedImage arrow;
     static double arrowDirection;
-    static int updownAmo = 1;
-    static int lefrigAmo = 0;
-    static int a = 1;
-    static int b = 1;
 
     static ArrayList<Block> blocks = new ArrayList<>(1);
     static ArrayList<Double> accel = new ArrayList<>(1);
@@ -78,16 +74,11 @@ public class MyPanel extends JPanel implements ImageObserver{
 //            }
 
         //gravity--------------------------------------------------------------------------
-        for (int i = 0; i < blocks.size(); i++) {
-            blocks.get(i).y[0] += updownAmo;
-            blocks.get(i).y[1] += updownAmo;
-            blocks.get(i).y[2] += updownAmo;
-            blocks.get(i).y[3] += updownAmo;
-            blocks.get(i).x[0] += lefrigAmo;
-            blocks.get(i).x[1] += lefrigAmo;
-            blocks.get(i).x[2] += lefrigAmo;
-            blocks.get(i).x[3] += lefrigAmo;
+
+        for (int i = 0; i<blocks.size(); i++){
+            blocks.get(i).gravity();
         }
+
         //arrow--------------------------------------------------------------------------
 
         try {
@@ -99,30 +90,32 @@ public class MyPanel extends JPanel implements ImageObserver{
 
         //keypresses--------------------------------------------------------------------------
 
-
         if (MyKeyListener.keydown) {
-            if (updownAmo <= -1) {
-                a = 0;
-            }
-            if (updownAmo >= 1) {
-                a = 1;
-            }
-            if (a == 1) {
-                updownAmo -= .05;
-            } else {
-                updownAmo += .05;
-            }
+            MyKeyListener.keydown = false;
+            for (int i = 0; i<blocks.size(); i++) {
+                if (blocks.get(i).getDown() <= -1) {
+                    blocks.get(i).setA(0);
+                }
+                if (blocks.get(i).getDown() >= 1) {
+                    blocks.get(i).setA(1);
+                }
+                if (blocks.get(i).getA() == 1) {
+                    blocks.get(i).setDown(-1);
+                } else {
+                    blocks.get(i).setDown(1);
+                }
 
-            if (lefrigAmo <= -1) {
-                b = 0;
-            }
-            if (lefrigAmo >= 1) {
-                b = 1;
-            }
-            if (b == 1) {
-                lefrigAmo -= .05;
-            } else {
-                lefrigAmo += .05;
+                if (blocks.get(i).getLeft() <= -1) {
+                    blocks.get(i).setB(0);
+                }
+                if (blocks.get(i).getLeft() >= 1) {
+                    blocks.get(i).setB(1);
+                }
+                if (blocks.get(i).getB() == 1) {
+                    blocks.get(i).setLeft(-1);
+                } else {
+                    blocks.get(i).setLeft(1);
+                }
             }
         }
 
