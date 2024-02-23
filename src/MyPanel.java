@@ -1,6 +1,7 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
@@ -13,9 +14,36 @@ public class MyPanel extends JPanel implements ImageObserver{
     static double size = 50.0;
     BufferedImage arrow;
     static double arrowDirection;
+    int amoooo = 10;
+    int updownAmo = 0;
+    int lefrigAmo = amoooo;
+    int add1 = -1;
+    int add2 = 1;
+    int wait = 0;
+    double angle = 0.0;
+
 
     static ArrayList<Block> blocks = new ArrayList<>(1);
     static ArrayList<Double> accel = new ArrayList<>(1);
+
+    public static BufferedImage rotate(Image image, double angleDegrees) {
+        double angleRadians = Math.toRadians(angleDegrees);
+        int originalWidth = image.getWidth(null);
+        int originalHeight = image.getHeight(null);
+        // Create a BufferedImage to hold the rotated image
+        BufferedImage rotatedImage = new BufferedImage(originalWidth, originalHeight, BufferedImage.TYPE_INT_ARGB);
+        // Get the Graphics2D object to draw on the rotated image
+        Graphics2D g2d = rotatedImage.createGraphics();
+        g2d.fillRect(0, 0, originalWidth, originalHeight);
+        AffineTransform rotationTransform = new AffineTransform();
+        rotationTransform.rotate(angleRadians, originalWidth / 2.0, originalHeight / 2.0);
+        g2d.setTransform(rotationTransform);
+        g2d.drawImage(image, 0, 0, null);
+        // Dispose the Graphics2D object
+        g2d.dispose();
+        // Return the rotated image
+        return rotatedImage;
+    }
 
     public MyPanel() {
         setBackground(new Color(29, 102, 16));
@@ -28,10 +56,14 @@ public class MyPanel extends JPanel implements ImageObserver{
         //when click--------------------------------------------------------------------------
 
         if (MyMouseListener.isdown) {
-            MyMouseListener.isdown = false;
-            blocks.add(new Block());
-            accel.add(.2);
-        } // end of while down
+            if (wait == 0) {
+                blocks.add(new Block(updownAmo, lefrigAmo));
+            }
+            wait++;
+            if (wait == 10){
+                wait = 0;
+            }
+        }
 
         //Deletion--------------------------------------------------------------------------
 
@@ -65,6 +97,7 @@ public class MyPanel extends JPanel implements ImageObserver{
         for (int i = 0; i < blocks.size(); i++) {
             g.setColor(Color.BLACK);
             g.fillPolygon(blocks.get(i).getXArray(), blocks.get(i).getYArray(), 4);
+
         }
 
         //Putting frame back--------------------------------------------------------------------------
@@ -90,39 +123,48 @@ public class MyPanel extends JPanel implements ImageObserver{
 
         //keypresses--------------------------------------------------------------------------
 
-        if (MyKeyListener.keydown) {
-            MyKeyListener.keydown = false;
-            for (int i = 0; i<blocks.size(); i++) {
-                if (blocks.get(i).getDown() <= -1) {
-                    blocks.get(i).setA(0);
-                }
-                if (blocks.get(i).getDown() >= 1) {
-                    blocks.get(i).setA(1);
-                }
-                if (blocks.get(i).getA() == 1) {
-                    blocks.get(i).setDown(-1);
-                } else {
-                    blocks.get(i).setDown(1);
-                }
-
-                if (blocks.get(i).getLeft() <= -1) {
-                    blocks.get(i).setB(0);
-                }
-                if (blocks.get(i).getLeft() >= 1) {
-                    blocks.get(i).setB(1);
-                }
-                if (blocks.get(i).getB() == 1) {
-                    blocks.get(i).setLeft(-1);
-                } else {
-                    blocks.get(i).setLeft(1);
-                }
+        if (MyKeyListener.keydown1) {
+//            MyKeyListener.keydown1 = false;
+//            MyKeyListener.keydown2 = false;
+            if (updownAmo >= amoooo){
+                add1 = -1;
             }
+            if (lefrigAmo >= amoooo){
+                add2 = -1;
+            }
+            if (updownAmo <= -amoooo){
+                add1 = 1;
+            }
+            if (lefrigAmo <= -amoooo){
+                add2 = 1;
+            }
+            updownAmo += add1;
+            lefrigAmo += add2;
+            arrow = rotate(arrow, angle);
         }
+//        if (MyKeyListener.keydown2) {
+//            MyKeyListener.keydown2 = false;
+//            if (updownAmo >= 10){
+//                add1 = -1;
+//            }
+//            if (lefrigAmo >= 10){
+//                add2 = -1;
+//            }
+//            if (updownAmo <= -10){
+//                add1 = 1;
+//            }
+//            if (lefrigAmo <= -10){
+//                add2 = 1;
+//            }
+//            updownAmo += add1;
+//            lefrigAmo -= add2;
+//        }
+
 
         //Trywait (end)--------------------------------------------------------------------------
 
         try {
-            Thread.sleep(3);
+            Thread.sleep(20);
         } catch (Exception e) {
             System.out.println(e);
         }

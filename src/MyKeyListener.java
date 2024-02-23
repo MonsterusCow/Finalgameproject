@@ -11,19 +11,23 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MyKeyListener extends KeyAdapter implements KeyListener {
-    static boolean keydown = false;
+    static boolean keydown1 = false;
+    static boolean keydown2 = false;
 
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_A) {
-            keydown = true;
-
+            keydown1 = true;
         }
-        System.out.println("work");
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            keydown2 = true;
+        }
     }
     @Override
     public void keyReleased(KeyEvent e) {
-        keydown = false;
+        keydown1 = false;
+        keydown2 = false;
+
     }
 }
 

@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
 
 
-        frame.setBounds(startcordx, startcordy, 600, 500);
-        frame.setResizable(false);
+        frame.setBounds(startcordx, startcordy, 1500, 1000);
+        frame.setResizable(true);
         MyPanel panel = new MyPanel();
         MyMouseListener listen = new MyMouseListener();
         MyKeyListener keylisten = new MyKeyListener();
