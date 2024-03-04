@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="turn arround">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/arrow9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyKeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMouseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

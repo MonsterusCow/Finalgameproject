@@ -1,63 +1,67 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 import java.lang.*;
 
 public class MyPanel extends JPanel implements ImageObserver{
 
     static double size = 50.0;
-    BufferedImage arrow;
-    static double arrowDirection;
-    int amoooo = 10;
+    BufferedImage arrow1, arrow2, arrow3, arrow4, arrow5, arrow6, arrow7, arrow8, arrow9, arrow10, arrow11, arrow12, arrow13, arrow14, arrow15, arrow16;
     int updownAmo = 0;
-    int lefrigAmo = amoooo;
-    int add1 = -1;
-    int add2 = 1;
-    int wait = 0;
-    double angle = 0.0;
+    int lefrigAmo = 8;
+    int add1;
+    int add2;
+    static int wait = 1;
+    int angle = 1;
+    BufferedImage[] arrows = new BufferedImage[16];
 
 
     static ArrayList<Block> blocks = new ArrayList<>(1);
-    static ArrayList<Double> accel = new ArrayList<>(1);
 
-    public static BufferedImage rotate(Image image, double angleDegrees) {
-        double angleRadians = Math.toRadians(angleDegrees);
-        int originalWidth = image.getWidth(null);
-        int originalHeight = image.getHeight(null);
-        // Create a BufferedImage to hold the rotated image
-        BufferedImage rotatedImage = new BufferedImage(originalWidth, originalHeight, BufferedImage.TYPE_INT_ARGB);
-        // Get the Graphics2D object to draw on the rotated image
-        Graphics2D g2d = rotatedImage.createGraphics();
-        g2d.fillRect(0, 0, originalWidth, originalHeight);
-        AffineTransform rotationTransform = new AffineTransform();
-        rotationTransform.rotate(angleRadians, originalWidth / 2.0, originalHeight / 2.0);
-        g2d.setTransform(rotationTransform);
-        g2d.drawImage(image, 0, 0, null);
-        // Dispose the Graphics2D object
-        g2d.dispose();
-        // Return the rotated image
-        return rotatedImage;
+    public void count(){
+        if (angle==1){ add1 = 0; add2 = 8; }
+        if (angle==2){ add1 = 3; add2 = 8; }
+        if (angle==3){ add1 = 5; add2 = 5; }
+        if (angle==4){ add1 = 8; add2 = 3; }
+        if (angle==5){ add1 = 8; add2 = 0; }
+        if (angle==6){ add1 = 8; add2 = -3; }
+        if (angle==7){ add1 = 5; add2 = -5; }
+        if (angle==8){ add1 = 3; add2 = -8; }
+        if (angle==9){ add1 = 0; add2 = -8; }
+        if (angle==10){ add1 = -3; add2 = -8; }
+        if (angle==11){ add1 = -5; add2 = -5; }
+        if (angle==12){ add1 = -8; add2 = -3; }
+        if (angle==13){ add1 = -8; add2 = 0; }
+        if (angle==14){ add1 = -8; add2 = 3; }
+        if (angle==15){ add1 = -5; add2 = 5; }
+        if (angle==16){ add1 = -3; add2 = 8; }
+        updownAmo = add1;
+        lefrigAmo = add2;
     }
 
     public MyPanel() {
         setBackground(new Color(29, 102, 16));
     }
 
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        //when click--------------------------------------------------------------------------
+        //make cooldown--------------------------------------------------------------------------
 
+//        if (MyMouseListener.clicked) {
+//                blocks.add(new Block(updownAmo, lefrigAmo));
+//                MyMouseListener.clicked = false;
+//        }
         if (MyMouseListener.isdown) {
             if (wait == 0) {
-                blocks.add(new Block(updownAmo, lefrigAmo));
+            blocks.add(new Block(updownAmo, lefrigAmo));
             }
             wait++;
             if (wait == 10){
@@ -107,58 +111,56 @@ public class MyPanel extends JPanel implements ImageObserver{
 //            }
 
         //gravity--------------------------------------------------------------------------
-
-        for (int i = 0; i<blocks.size(); i++){
-            blocks.get(i).gravity();
-        }
+//
+//        for (int i = 0; i<blocks.size(); i++){
+//            blocks.get(i).gravity();
+//        }
 
         //arrow--------------------------------------------------------------------------
 
-        try {
-            arrow = ImageIO.read(new File("Images/arrow.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
+        try { arrow1 = ImageIO.read(new File("Images/arrow1.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow2 = ImageIO.read(new File("Images/arrow2.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow3 = ImageIO.read(new File("Images/arrow3.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow4 = ImageIO.read(new File("Images/arrow4.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow5 = ImageIO.read(new File("Images/arrow5.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow6 = ImageIO.read(new File("Images/arrow6.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow7 = ImageIO.read(new File("Images/arrow7.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow8 = ImageIO.read(new File("Images/arrow8.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow9 = ImageIO.read(new File("Images/arrow9.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow10 = ImageIO.read(new File("Images/arrow10.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow11 = ImageIO.read(new File("Images/arrow11.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow12 = ImageIO.read(new File("Images/arrow12.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow13 = ImageIO.read(new File("Images/arrow13.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow14 = ImageIO.read(new File("Images/arrow14.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow15 = ImageIO.read(new File("Images/arrow15.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { arrow16 = ImageIO.read(new File("Images/arrow16.png")); } catch (IOException e) { e.printStackTrace(); }
+
+        for(int i = 1; i < 17; i++){
+            try { arrows[i-1] = ImageIO.read(new File("Images/arrow" + i + ".png")); } catch (Exception e){}
         }
-        g.drawImage(arrow, (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()) - arrow.getWidth() / 2, (MouseInfo.getPointerInfo().getLocation().y - Main.frame.getY()) - (arrow.getHeight() / 2 + 20), this);
+
+        g.drawImage(arrows[angle-1], (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()) - arrow1.getWidth() / 2, (MouseInfo.getPointerInfo().getLocation().y - Main.frame.getY()) - (arrow1.getHeight() / 2 + 20), this);
 
         //keypresses--------------------------------------------------------------------------
 
         if (MyKeyListener.keydown1) {
-//            MyKeyListener.keydown1 = false;
-//            MyKeyListener.keydown2 = false;
-            if (updownAmo >= amoooo){
-                add1 = -1;
+            MyKeyListener.keydown1 = false;
+            if (angle==1) {
+                angle = 16;
+            } else {
+                angle--;
             }
-            if (lefrigAmo >= amoooo){
-                add2 = -1;
-            }
-            if (updownAmo <= -amoooo){
-                add1 = 1;
-            }
-            if (lefrigAmo <= -amoooo){
-                add2 = 1;
-            }
-            updownAmo += add1;
-            lefrigAmo += add2;
-            arrow = rotate(arrow, angle);
+            count();
         }
-//        if (MyKeyListener.keydown2) {
-//            MyKeyListener.keydown2 = false;
-//            if (updownAmo >= 10){
-//                add1 = -1;
-//            }
-//            if (lefrigAmo >= 10){
-//                add2 = -1;
-//            }
-//            if (updownAmo <= -10){
-//                add1 = 1;
-//            }
-//            if (lefrigAmo <= -10){
-//                add2 = 1;
-//            }
-//            updownAmo += add1;
-//            lefrigAmo -= add2;
-//        }
+        if (MyKeyListener.keydown2) {
+            MyKeyListener.keydown2 = false;
+            if (angle==16){
+                angle = 1;
+            } else {
+                angle++;
+            }
+            count();
+        }
 
 
         //Trywait (end)--------------------------------------------------------------------------

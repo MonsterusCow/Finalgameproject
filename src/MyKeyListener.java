@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
+import java.security.Key;
 import java.util.ArrayList;
 
 public class MyKeyListener extends KeyAdapter implements KeyListener {
@@ -28,6 +29,16 @@ public class MyKeyListener extends KeyAdapter implements KeyListener {
         keydown1 = false;
         keydown2 = false;
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e){
+        if (e.getKeyCode() == KeyEvent.VK_A) {
+            keydown1 = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            keydown2 = true;
+        }
     }
 }
 
