@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="turn arround">
-      <change afterPath="$PROJECT_DIR$/Images/arrow1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/arrow9.png" afterDir="false" />
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="many things">
+      <change afterPath="$PROJECT_DIR$/Images/slothandledn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/slothandleup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/slotmachineemp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/slotmachineful.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyKeyListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMouseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
     </list>
@@ -122,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708450209812</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="many things">
+      <option name="closed" value="true" />
+      <created>1709574627183</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709574627183</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -130,6 +124,7 @@
     <MESSAGE value="2nd, a bunch" />
     <MESSAGE value="many" />
     <MESSAGE value="turn arround" />
-    <option name="LAST_COMMIT_MESSAGE" value="turn arround" />
+    <MESSAGE value="many things" />
+    <option name="LAST_COMMIT_MESSAGE" value="many things" />
   </component>
 </project>
