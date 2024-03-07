@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="many things">
-      <change afterPath="$PROJECT_DIR$/Images/slothandledn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/slothandleup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/slotmachineemp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/slotmachineful.png" afterDir="false" />
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="changed everything">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMouseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow10.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow11.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow12.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow13.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow14.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow15.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow16.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow5.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow6.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow7.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow8.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/arrow9.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Arrows/arrow9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/slothandledn.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Machine parts/slothandledn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/slothandleup.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Machine parts/slothandleup.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/slotmachineemp.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Machine parts/slotmachineemp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/slotmachineful.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Machine parts/slotmachineful.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +68,8 @@
       <recent name="$PROJECT_DIR$/Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images/Machine parts" />
+      <recent name="$PROJECT_DIR$/Images/Arrows" />
       <recent name="$PROJECT_DIR$/Images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -116,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709574627183</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changed everything">
+      <option name="closed" value="true" />
+      <created>1709746204335</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709746204335</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -125,6 +150,7 @@
     <MESSAGE value="many" />
     <MESSAGE value="turn arround" />
     <MESSAGE value="many things" />
-    <option name="LAST_COMMIT_MESSAGE" value="many things" />
+    <MESSAGE value="changed everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed everything" />
   </component>
 </project>

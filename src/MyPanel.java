@@ -26,10 +26,10 @@ public class MyPanel extends JPanel implements ImageObserver {
 
 
 
-        try { slothandledn = ImageIO.read(new File("Images/slothandledn.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { slothandleup = ImageIO.read(new File("Images/slothandleup.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { slotmachineful = ImageIO.read(new File("Images/slotmachineful.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { slotmachineemp = ImageIO.read(new File("Images/slotmachineemp.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { slothandledn = ImageIO.read(new File("Images/Machine Parts/slothandledn.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { slothandleup = ImageIO.read(new File("Images/Machine Parts/slothandleup.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { slotmachineful = ImageIO.read(new File("Images/Machine Parts/slotmachineful.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { slotmachineemp = ImageIO.read(new File("Images/Machine Parts/slotmachineemp.png")); } catch (IOException e) { e.printStackTrace(); }
         slots[0] = slothandledn; slots[1] = slothandleup; slots[2] = slotmachineful; slots[3] = slotmachineemp;
 
 //        g.drawImage(slotmachineful, (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()), (MouseInfo.getPointerInfo().getLocation().y - Main.frame.getY()), this);
