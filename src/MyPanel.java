@@ -16,6 +16,38 @@ public class MyPanel extends JPanel implements ImageObserver {
 
     BufferedImage slothandledn, slothandleup, slotmachineful, slotmachineemp;
     BufferedImage[] slots = new BufferedImage[4];
+    BufferedImage Cherry, Lemon, Melon, Heart, Bell, Shoe, Diamond, Bar, Seven;
+    BufferedImage first, second, third;
+    BufferedImage perm1, perm2, perm3;
+
+    public static BufferedImage resize(BufferedImage img, int newW, int newH) {
+        Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+        BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
+
+        Graphics2D g2d = dimg.createGraphics();
+        g2d.drawImage(tmp, 0, 0, null);
+        g2d.dispose();
+
+        return dimg;
+    }
+
+    public BufferedImage roll(){
+        try { Cherry = ImageIO.read(new File("Images/Roll parts/Cherry.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Lemon = ImageIO.read(new File("Images/Roll parts/Lemon.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Melon = ImageIO.read(new File("Images/Roll parts/Melon.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Heart = ImageIO.read(new File("Images/Roll parts/Heart.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Bell = ImageIO.read(new File("Images/Roll parts/Bell.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Shoe = ImageIO.read(new File("Images/Roll parts/Shoe.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Diamond = ImageIO.read(new File("Images/Roll parts/Diamond.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Bar = ImageIO.read(new File("Images/Roll parts/Bar.png")); } catch (IOException e) { e.printStackTrace(); }
+        try { Seven = ImageIO.read(new File("Images/Roll parts/Seven.png")); } catch (IOException e) { e.printStackTrace(); }
+        BufferedImage[] symbols = {Cherry, Lemon, Melon, Heart, Bell, Shoe, Diamond, Bar, Seven};
+        for (int i = 0; i < 9; i++){
+            symbols[i] = resize(symbols[i], 63, 89);
+        }
+        return symbols[(int)(Math.random()*8)];
+    }
+
     public MyPanel() {
         setBackground(new Color(29, 102, 16));
     }
@@ -23,8 +55,6 @@ public class MyPanel extends JPanel implements ImageObserver {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
-
 
         try { slothandledn = ImageIO.read(new File("Images/Machine Parts/slothandledn.png")); } catch (IOException e) { e.printStackTrace(); }
         try { slothandleup = ImageIO.read(new File("Images/Machine Parts/slothandleup.png")); } catch (IOException e) { e.printStackTrace(); }
@@ -41,7 +71,7 @@ public class MyPanel extends JPanel implements ImageObserver {
            g.drawImage(slothandledn, 640, 69, this);
 
        }
-        g.drawImage(slotmachineful, 432, 60, this);
+        g.drawImage(slotmachineemp, 432, 60, this);
 
         //check click--------------------------------------------------------------------------
 
@@ -49,26 +79,34 @@ public class MyPanel extends JPanel implements ImageObserver {
             MyMouseListener.clicked = false;
             if (MyMouseListener.clickedx >= 887 && MyMouseListener.clickedx <= 930) {
                 if (MyMouseListener.clickedy >= 237 && MyMouseListener.clickedy <= 402) {
-                    if (up) {
-                        up = false;
-                    } else {
-                        up = true;
-                    }
+                    up = false;
                     MyMouseListener.clickedx = 0;
                     MyMouseListener.clickedy = 0;
                     timer = true;
                 }
             }
         }
-
         if (timer){
             wait++;
+            if (wait % 5 == 0){
+                perm1 = roll();
+                perm2 = roll();
+                perm3 = roll();
+                g.drawImage(perm1, 572, 322, this);
+                g.drawImage(perm2, 658, 322, this);
+                g.drawImage(perm3, 746, 322, this);
+            }
             if (wait >= 20){
                 timer = false;
                 up = true;
                 wait = 0;
             }
         }
+
+        g.drawImage(perm1, 572, 322, this);
+        g.drawImage(perm2, 658, 322, this);
+        g.drawImage(perm3, 746, 322, this);
+
 
         //Trywait (end)--------------------------------------------------------------------------
 
