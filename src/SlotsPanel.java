@@ -5,21 +5,25 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
 import java.lang.*;
 
-public class MyPanel extends JPanel implements ImageObserver {
+public class SlotsPanel extends JPanel implements ImageObserver {
 
     boolean up = true;
     boolean timer = false;
     int wait = 0;
+    static int points = 500;
+    int[] lastrolled = new int[3];
 
     BufferedImage slothandledn, slothandleup, slotmachineful, slotmachineemp;
     BufferedImage[] slots = new BufferedImage[4];
     BufferedImage Cherry, Lemon, Melon, Heart, Bell, Shoe, Diamond, Bar, Seven;
     BufferedImage first, second, third;
     BufferedImage perm1, perm2, perm3;
+    BufferedImage Casino;
 
+
+//Resize Method ------------------------------------------------------------------------------------------------------------
     public static BufferedImage resize(BufferedImage img, int newW, int newH) {
         Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
         BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
@@ -30,39 +34,135 @@ public class MyPanel extends JPanel implements ImageObserver {
 
         return dimg;
     }
-
-    public BufferedImage roll(){
-        try { Cherry = ImageIO.read(new File("Images/Roll parts/Cherry.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Lemon = ImageIO.read(new File("Images/Roll parts/Lemon.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Melon = ImageIO.read(new File("Images/Roll parts/Melon.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Heart = ImageIO.read(new File("Images/Roll parts/Heart.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Bell = ImageIO.read(new File("Images/Roll parts/Bell.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Shoe = ImageIO.read(new File("Images/Roll parts/Shoe.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Diamond = ImageIO.read(new File("Images/Roll parts/Diamond.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Bar = ImageIO.read(new File("Images/Roll parts/Bar.png")); } catch (IOException e) { e.printStackTrace(); }
-        try { Seven = ImageIO.read(new File("Images/Roll parts/Seven.png")); } catch (IOException e) { e.printStackTrace(); }
+//Roll Method ------------------------------------------------------------------------------------------------------------
+    public BufferedImage roll(int a) {
+        try {
+            Cherry = ImageIO.read(new File("Images/Roll parts/Cherry.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Lemon = ImageIO.read(new File("Images/Roll parts/Lemon.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Melon = ImageIO.read(new File("Images/Roll parts/Melon.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Heart = ImageIO.read(new File("Images/Roll parts/Heart.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Bell = ImageIO.read(new File("Images/Roll parts/Bell.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Shoe = ImageIO.read(new File("Images/Roll parts/Shoe.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Diamond = ImageIO.read(new File("Images/Roll parts/Diamond.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Bar = ImageIO.read(new File("Images/Roll parts/Bar.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            Seven = ImageIO.read(new File("Images/Roll parts/Seven.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         BufferedImage[] symbols = {Cherry, Lemon, Melon, Heart, Bell, Shoe, Diamond, Bar, Seven};
-        for (int i = 0; i < 9; i++){
+        for (int i = 0; i < 9; i++) {
             symbols[i] = resize(symbols[i], 63, 89);
         }
-        return symbols[(int)(Math.random()*8)];
+        int chosen = -1;
+        int number = (int) (Math.random() * 100);
+        //cherry
+        if (number <= 30) {
+            //cherry
+            chosen = 0;
+        } else if (number <= 45) {
+            //lemon
+            chosen = 1;
+        } else if (number <= 60) {
+            //melon
+            chosen = 2;
+        } else if (number <= 70) {
+            //heart
+            chosen = 3;
+        } else if (number <= 80) {
+            //bell
+            chosen = 4;
+        } else if (number <= 85) {
+            //shoe
+            chosen = 5;
+        } else if (number <= 90) {
+            //diamond
+            chosen = 6;
+        } else if (number <= 96) {
+            //bar
+            chosen = 7;
+        } else if (number <= 100) {
+            //seven
+            chosen = 8;
+        }
+        lastrolled[a] = chosen;
+        return symbols[chosen];
     }
-
-    public MyPanel() {
-        setBackground(new Color(29, 102, 16));
+//Check for points method ------------------------------------------------------------------------------------------------------------
+    public void points() {
+        if (lastrolled[0] == 0 && lastrolled[1] == 0 && lastrolled[2] == 0){
+            points += 100;
+        } if ((lastrolled[0] == 0 && (lastrolled[0] == lastrolled[1] || lastrolled[0] == lastrolled[2])) || (lastrolled[1] == 0 && lastrolled[1]==lastrolled[2])) {
+            points += 50;
+            System.out.println(points);
+        } else if (lastrolled[0] == 1 && lastrolled[1] == 1 && lastrolled[2] == 1){
+            points += 200;
+        } else if (lastrolled[0] == 2 && lastrolled[1] == 2 && lastrolled[2] == 2){
+            points += 300;
+        } else if (lastrolled[0] == 3 && lastrolled[1] == 3 && lastrolled[2] == 3){
+            points += 400;
+        } else if (lastrolled[0] == 4 && lastrolled[1] == 4 && lastrolled[2] == 4){
+            points += 500;
+        } else if (lastrolled[0] == 5 && lastrolled[1] == 5 && lastrolled[2] == 5){
+            points += 700;
+        } else if (lastrolled[0] == 6 && lastrolled[1] == 6 && lastrolled[2] == 6){
+            points += 900;
+        } else if (lastrolled[0] == 7 && lastrolled[1] == 7 && lastrolled[2] == 7){
+            points += 1000;
+        } else if (lastrolled[0] == 8 && lastrolled[1] == 8 && lastrolled[2] == 8){
+            points += 2000;
+        }
+    }
+    //Contructor ------------------------------------------------------------------------------------------------------------
+    public SlotsPanel() {
+        setBackground(new Color(30, 104, 213));
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        //Draw ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+        try { Casino = ImageIO.read(new File("Images/Casino.png")); } catch (IOException e) { e.printStackTrace(); }
+//        g.drawImage( Casino, 0, 0, this);
+
         try { slothandledn = ImageIO.read(new File("Images/Machine Parts/slothandledn.png")); } catch (IOException e) { e.printStackTrace(); }
         try { slothandleup = ImageIO.read(new File("Images/Machine Parts/slothandleup.png")); } catch (IOException e) { e.printStackTrace(); }
         try { slotmachineful = ImageIO.read(new File("Images/Machine Parts/slotmachineful.png")); } catch (IOException e) { e.printStackTrace(); }
         try { slotmachineemp = ImageIO.read(new File("Images/Machine Parts/slotmachineemp.png")); } catch (IOException e) { e.printStackTrace(); }
         slots[0] = slothandledn; slots[1] = slothandleup; slots[2] = slotmachineful; slots[3] = slotmachineemp;
-
-//        g.drawImage(slotmachineful, (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()), (MouseInfo.getPointerInfo().getLocation().y - Main.frame.getY()), this);
 
 
        if (up) {
@@ -71,44 +171,82 @@ public class MyPanel extends JPanel implements ImageObserver {
            g.drawImage(slothandledn, 640, 69, this);
 
        }
-        g.drawImage(slotmachineemp, 432, 60, this);
+        g.drawImage(slotmachineful, 432, 60, this);
 
-        //check click--------------------------------------------------------------------------
+        //When click handle ----------------------------------------------------------------------------------------------------------------------------------------------------
 
         if (MyMouseListener.clicked) {
-            MyMouseListener.clicked = false;
             if (MyMouseListener.clickedx >= 887 && MyMouseListener.clickedx <= 930) {
                 if (MyMouseListener.clickedy >= 237 && MyMouseListener.clickedy <= 402) {
                     up = false;
                     MyMouseListener.clickedx = 0;
                     MyMouseListener.clickedy = 0;
                     timer = true;
+                    if (wait == 0){
+                        points -= 10;
+                    }
                 }
             }
         }
+
+        //Timer to spin and put handle up ----------------------------------------------------------------------------------------------------------------------------------------------------
         if (timer){
             wait++;
-            if (wait % 5 == 0){
-                perm1 = roll();
-                perm2 = roll();
-                perm3 = roll();
-                g.drawImage(perm1, 572, 322, this);
-                g.drawImage(perm2, 658, 322, this);
-                g.drawImage(perm3, 746, 322, this);
+            if (wait % 2 == 0){
+                perm1 = roll(0);
+                perm2 = roll(1);
+                perm3 = roll(2);
+                g.drawImage(perm1, 572, 293, this);
+                g.drawImage(perm2, 658, 293, this);
+                g.drawImage(perm3, 746, 293, this);
             }
             if (wait >= 20){
                 timer = false;
                 up = true;
                 wait = 0;
+                points();
+            }
+        }
+        g.drawImage(perm1, 572, 293, this);
+        g.drawImage(perm2, 658, 293, this);
+        g.drawImage(perm3, 746, 293, this);
+
+        //Drawing stuff ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //main one
+        g.fillPolygon(new int[]{75, 425,425, 75}, new int[]{75, 75, 575, 575}, 4);
+//        scoresheet
+        g.setColor(Color.blue);
+        g.fillPolygon(new int[]{95, 405,405, 95}, new int[]{95, 95, 170, 170}, 4);
+        g.setFont(new Font("Arial", Font.PLAIN, 20));
+        g.setColor(Color.black);
+        g.drawString("Press for score sheet :)", 125, 140);
+//        Points
+        g.setColor(Color.blue);
+        g.fillPolygon(new int[]{95, 405,405, 95}, new int[]{200, 200, 275, 275}, 4);
+        g.setFont(new Font("Arial", Font.PLAIN, 20));
+        g.setColor(Color.black);
+        g.drawString("Points: "+points, 125, 245);
+
+//Clicking info buttons----------------------------------------------------------------------------------------------------------------------------------------------------
+
+        if (MyMouseListener.clicked) {
+            if (MyMouseListener.clickedx >= 95 && MyMouseListener.clickedx <= 405) {
+                if (MyMouseListener.clickedy >= 95 && MyMouseListener.clickedy <= 170) {
+                    Main.startframe.setBounds(600, 130, 900, 525);
+                    ScorePanel scorepanel = new ScorePanel();
+                    Main.startframe.add(scorepanel);
+                    Main.startframe.setVisible(true);
+
+                }
             }
         }
 
-        g.drawImage(perm1, 572, 322, this);
-        g.drawImage(perm2, 658, 322, this);
-        g.drawImage(perm3, 746, 322, this);
+// Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-        //Trywait (end)--------------------------------------------------------------------------
+        if (MyMouseListener.clicked) {
+            MyMouseListener.clicked = false;
+        }
 
         try {
             Thread.sleep(20);
@@ -119,15 +257,9 @@ public class MyPanel extends JPanel implements ImageObserver {
         //repaint--------------------------------------------------------------------------
         repaint();
     }
+
+
 }
-
-
-
-
-
-
-
-
 
 
 //    static double size = 50.0;
