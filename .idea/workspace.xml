@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="Pictures">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/Casino.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/Roll parts/ScoreSheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScorePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StartPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Bar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Bar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Bell.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Bell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Cherry.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Cherry.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Diamond.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Diamond.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Heart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Lemon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Lemon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Melon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Melon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Seven.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Seven.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Roll parts/Shoe.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/Shoe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="Slots work" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +82,7 @@
       <updated>1706893581005</updated>
       <workItem from="1709947598810" duration="10289000" />
       <workItem from="1709993513172" duration="277000" />
-      <workItem from="1710007217666" duration="6985000" />
+      <workItem from="1710007217666" duration="7027000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <option name="closed" value="true" />
@@ -166,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709832668636</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Slots work">
+      <option name="closed" value="true" />
+      <created>1710020868437</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710020868437</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +170,7 @@
     <MESSAGE value="many things" />
     <MESSAGE value="changed everything" />
     <MESSAGE value="Pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pictures" />
+    <MESSAGE value="Slots work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Slots work" />
   </component>
 </project>
