@@ -1,3 +1,5 @@
+import org.w3c.dom.Text;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -86,7 +88,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
             symbols[i] = resize(symbols[i], 63, 89);
         }
         int chosen = -1;
-        int number = (int) (Math.random() * 100);
+        int number = (int) (Math.random() * 101);
         //cherry
         if (number <= 30) {
             //cherry
@@ -216,29 +218,27 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         //main one
         g.fillPolygon(new int[]{75, 425,425, 75}, new int[]{75, 75, 575, 575}, 4);
 //        scoresheet
-        g.setColor(Color.blue);
-        g.fillPolygon(new int[]{95, 405,405, 95}, new int[]{95, 95, 170, 170}, 4);
-        g.setFont(new Font("Arial", Font.PLAIN, 20));
-        g.setColor(Color.black);
-        g.drawString("Press for score sheet :)", 125, 140);
+        TextBox scoresheetbox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{95, 95, 170, 170}, "Press for score sheet :)", g);
+        scoresheetbox.draw();
 //        Points
-        g.setColor(Color.blue);
-        g.fillPolygon(new int[]{95, 405,405, 95}, new int[]{200, 200, 275, 275}, 4);
-        g.setFont(new Font("Arial", Font.PLAIN, 20));
-        g.setColor(Color.black);
-        g.drawString("Points: "+points, 125, 245);
+        TextBox pointsbox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{200, 200, 275, 275}, "Points:"+points, g);
+        pointsbox.draw();
+//        UpgradesSlotsPanel
+        TextBox upgradebox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{305, 305, 380, 380}, "Press for upgrades", g);
+        upgradebox.draw();
+
 
 //Clicking info buttons----------------------------------------------------------------------------------------------------------------------------------------------------
 
         if (MyMouseListener.clicked) {
-            if (MyMouseListener.clickedx >= 95 && MyMouseListener.clickedx <= 405) {
-                if (MyMouseListener.clickedy >= 95 && MyMouseListener.clickedy <= 170) {
-                    Main.startframe.setBounds(600, 130, 900, 525);
-                    ScorePanel scorepanel = new ScorePanel();
-                    Main.startframe.add(scorepanel);
-                    Main.startframe.setVisible(true);
-
-                }
+            if(scoresheetbox.clicked()) {
+                Main.startframe.setBounds(600, 130, 900, 525);
+                ScorePanel scorepanel = new ScorePanel();
+                Main.startframe.add(scorepanel);
+                Main.startframe.setVisible(true);
+            }
+            if(upgradebox.clicked()){
+                System.out.println("hi");
             }
         }
 
