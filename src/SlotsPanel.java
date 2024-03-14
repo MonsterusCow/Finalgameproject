@@ -16,6 +16,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     int wait = 0;
     static int points = 500;
     int[] lastrolled = new int[3];
+    int auto = 0;
 
     BufferedImage slothandledn, slothandleup, slotmachineful, slotmachineemp;
     BufferedImage[] slots = new BufferedImage[4];
@@ -193,20 +194,28 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
         //Timer to spin and put handle up ----------------------------------------------------------------------------------------------------------------------------------------------------
         if (timer){
-            wait++;
-            if (wait % 2 == 0){
-                perm1 = roll(0);
-                perm2 = roll(1);
-                perm3 = roll(2);
-                g.drawImage(perm1, 572, 293, this);
-                g.drawImage(perm2, 658, 293, this);
-                g.drawImage(perm3, 746, 293, this);
-            }
-            if (wait >= 20){
-                timer = false;
-                up = true;
-                wait = 0;
-                points();
+            if (auto == 0) {
+                wait++;
+                if (wait % 2 == 0) {
+                    perm1 = roll(0);
+                    perm2 = roll(1);
+                    perm3 = roll(2);
+                    g.drawImage(perm1, 572, 293, this);
+                    g.drawImage(perm2, 658, 293, this);
+                    g.drawImage(perm3, 746, 293, this);
+                }
+                if (wait >= 20) {
+                    if (!UpgradePanel.autoo) {
+                        timer = false;
+                    } else {
+                        auto = 10;
+                    }
+                    up = true;
+                    wait = 0;
+                    points();
+                }
+            } else {
+                auto--;
             }
         }
         g.drawImage(perm1, 572, 293, this);
@@ -232,13 +241,17 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
         if (MyMouseListener.clicked) {
             if(scoresheetbox.clicked()) {
-                Main.startframe.setBounds(600, 130, 900, 525);
+                Main.scoreFrame.setBounds(600, 130, 900, 525);
                 ScorePanel scorepanel = new ScorePanel();
-                Main.startframe.add(scorepanel);
-                Main.startframe.setVisible(true);
+                Main.scoreFrame.add(scorepanel);
+                Main.scoreFrame.setVisible(true);
+
             }
             if(upgradebox.clicked()){
-                System.out.println("hi");
+                Main.upgradeFrame.setBounds(600, 130, 900, 525);
+                UpgradePanel upgradePanel = new UpgradePanel();
+                Main.upgradeFrame.add(upgradePanel);
+                Main.upgradeFrame.setVisible(true);
             }
         }
 

@@ -14,6 +14,8 @@ public class TextBox {
     int[] x, y;
     String text;
     Graphics g;
+    int length;
+    int center;
 
     public TextBox(Color bc, Color tc, int[] x, int[] y, String text, Graphics g){
         this.bc = bc;
@@ -22,6 +24,7 @@ public class TextBox {
         this.y = y;
         this.text = text;
         this.g = g;
+        length = text.length()*10;
     }
 
     public void draw(){
@@ -29,7 +32,11 @@ public class TextBox {
         g.fillPolygon(x, y, 4);
         g.setFont(new Font("Arial", Font.PLAIN, 20));
         g.setColor(Color.black);
-        g.drawString(text, x[0]+30, y[0]+45);
+        center = ((x[1]-x[0])-length)/2;
+        if(center < 0){
+            center = 0;
+        }
+        g.drawString(text, x[0]+center, y[0] + 45);
     }
 
     public boolean clicked(){
