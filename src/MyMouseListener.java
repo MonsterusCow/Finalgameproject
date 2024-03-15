@@ -19,6 +19,7 @@ public class MyMouseListener implements MouseListener {
     }
     @Override
     public void mouseReleased(MouseEvent e) {
+        clicked = false;
     }
     @Override
     public void mouseEntered(MouseEvent e) {}

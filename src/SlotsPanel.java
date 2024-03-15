@@ -1,5 +1,3 @@
-import org.w3c.dom.Text;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -216,6 +214,12 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                 }
             } else {
                 auto--;
+                if (auto == 1){
+                    up = false;
+                    if (wait == 0){
+                        points -= 10;
+                    }
+                }
             }
         }
         g.drawImage(perm1, 572, 293, this);
@@ -257,9 +261,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
 // Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        if (MyMouseListener.clicked) {
-            MyMouseListener.clicked = false;
-        }
+
 
         try {
             Thread.sleep(20);
