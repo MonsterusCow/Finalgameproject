@@ -20,8 +20,8 @@ public class UpgradePanel extends JPanel implements ImageObserver {
         auto.draw();
 
 
-        if (MyMouseListener.clicked) {
-            if(auto.clicked()) {
+        if (UpgradesMouseListener.clicked) {
+            if(auto.upgrClicked()) {
                 autoo = true;
                 SlotsPanel.points -= 1000;
                 System.out.println("dasd");

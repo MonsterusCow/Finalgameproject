@@ -244,14 +244,14 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 //Clicking info buttons----------------------------------------------------------------------------------------------------------------------------------------------------
 
         if (MyMouseListener.clicked) {
-            if(scoresheetbox.clicked()) {
+            if(scoresheetbox.slotsClicked()) {
                 Main.scoreFrame.setBounds(600, 130, 900, 525);
                 ScorePanel scorepanel = new ScorePanel();
                 Main.scoreFrame.add(scorepanel);
                 Main.scoreFrame.setVisible(true);
 
             }
-            if(upgradebox.clicked()){
+            if(upgradebox.slotsClicked()){
                 Main.upgradeFrame.setBounds(600, 130, 900, 525);
                 UpgradePanel upgradePanel = new UpgradePanel();
                 Main.upgradeFrame.add(upgradePanel);

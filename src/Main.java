@@ -17,15 +17,18 @@ public class Main {
         SlotsPanel panel = new SlotsPanel();
 
         MyMouseListener listen = new MyMouseListener();
+        UpgradesMouseListener upg = new UpgradesMouseListener();
         MyKeyListener keylisten = new MyKeyListener();
 
         panel.setFocusable(true);
         panel.addMouseListener(listen);
-        scoreFrame.addMouseListener(listen);
-        upgradeFrame.addMouseListener(listen);
         frame.add(panel);
-
         frame.setVisible(true);
+
+        scoreFrame.addMouseListener(listen);
+
+        upgradeFrame.addMouseListener(upg);
+
 
 //Starting Frame ----------------------------------------------------------------------------------------------------
 

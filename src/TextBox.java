@@ -31,9 +31,18 @@ public class TextBox {
         g.drawString(text, x[0]+center, y[0] + 45);
     }
 
-    public boolean clicked(){
+    public boolean slotsClicked(){
         if (MyMouseListener.clickedx >= x[0] && MyMouseListener.clickedx <= x[1]){
             if (MyMouseListener.clickedy >= y[0] && MyMouseListener.clickedy <= y[3]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean upgrClicked(){
+        if (UpgradesMouseListener.clickedx >= x[0] && UpgradesMouseListener.clickedx <= x[1]){
+            if (UpgradesMouseListener.clickedy >= y[0] && UpgradesMouseListener.clickedy <= y[3]){
                 return true;
             }
         }
