@@ -12,7 +12,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     boolean up = true;
     boolean timer = false;
     int wait = 0;
-    static int points = 500;
+    static int points = 1100;
     int[] lastrolled = new int[3];
     int auto = 0;
 
@@ -206,7 +206,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                     if (!UpgradePanel.autoo) {
                         timer = false;
                     } else {
-                        auto = 10;
+                        auto = 30;
                     }
                     up = true;
                     wait = 0;
@@ -239,6 +239,11 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 //        UpgradesSlotsPanel
         TextBox upgradebox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{305, 305, 380, 380}, "Press for upgrades", g);
         upgradebox.draw();
+//        auto timer
+        if (UpgradePanel.autoo) {
+            TextBox autoTimer = new TextBox(Color.blue, Color.black, new int[]{95, 405, 405, 95}, new int[]{410, 410, 485, 485}, "Auto Timer:" + auto, g);
+            autoTimer.draw();
+        }
 
 
 //Clicking info buttons----------------------------------------------------------------------------------------------------------------------------------------------------
