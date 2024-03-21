@@ -240,8 +240,8 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         TextBox upgradebox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{305, 305, 380, 380}, "Press for upgrades", g);
         upgradebox.draw();
 //        auto timer
+        TextBox autoTimer = new TextBox(Color.blue, Color.black, new int[]{95, 405, 405, 95}, new int[]{410, 410, 485, 485}, "Auto Timer:" + auto, g);
         if (UpgradePanel.autoo) {
-            TextBox autoTimer = new TextBox(Color.blue, Color.black, new int[]{95, 405, 405, 95}, new int[]{410, 410, 485, 485}, "Auto Timer:" + auto, g);
             autoTimer.draw();
         }
 
@@ -254,7 +254,6 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                 ScorePanel scorepanel = new ScorePanel();
                 Main.scoreFrame.add(scorepanel);
                 Main.scoreFrame.setVisible(true);
-
             }
             if(upgradebox.slotsClicked()){
                 Main.upgradeFrame.setBounds(600, 130, 900, 525);
