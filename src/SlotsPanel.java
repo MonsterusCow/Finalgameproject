@@ -192,34 +192,34 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
         //Timer to spin and put handle up ----------------------------------------------------------------------------------------------------------------------------------------------------
         if (timer){
-            if (auto == 0) {
-                wait++;
-                if (wait % 2 == 0) {
-                    perm1 = roll(0);
-                    perm2 = roll(1);
-                    perm3 = roll(2);
-                    g.drawImage(perm1, 572, 293, this);
-                    g.drawImage(perm2, 658, 293, this);
-                    g.drawImage(perm3, 746, 293, this);
-                }
-                if (wait >= 20) {
-                    if (!UpgradePanel.autoo) {
-                        timer = false;
-                    } else {
-                        auto = 30;
+                if (auto == 0) {
+                    wait++;
+                    if (wait % 2 == 0) {
+                        perm1 = roll(0);
+                        perm2 = roll(1);
+                        perm3 = roll(2);
+                        g.drawImage(perm1, 572, 293, this);
+                        g.drawImage(perm2, 658, 293, this);
+                        g.drawImage(perm3, 746, 293, this);
                     }
-                    up = true;
-                    wait = 0;
-                    points();
-                }
-            } else {
-                auto--;
-                if (auto == 1){
-                    up = false;
-                    if (wait == 0){
-                        points -= 10;
+                    if (wait >= 20) {
+                        if (!UpgradePanel.autoo) {
+                            timer = false;
+                        } else {
+                            auto = 30;
+                        }
+                        up = true;
+                        wait = 0;
+                        points();
                     }
-                }
+                } else {
+                    auto--;
+                    if (auto == 1) {
+                        up = false;
+                        if (wait == 0) {
+                            points -= 10;
+                        }
+                    }
             }
         }
         g.drawImage(perm1, 572, 293, this);
@@ -231,16 +231,16 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         //main one
         g.fillPolygon(new int[]{75, 425,425, 75}, new int[]{75, 75, 575, 575}, 4);
 //        scoresheet
-        TextBox scoresheetbox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{95, 95, 170, 170}, "Press for score sheet :)", g);
+        TextBox scoresheetbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{95, 95, 170, 170}, "Press for score sheet :)", g);
         scoresheetbox.draw();
 //        Points
-        TextBox pointsbox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{200, 200, 275, 275}, "Points:"+points, g);
+        TextBox pointsbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{200, 200, 275, 275}, "Points:"+points, g);
         pointsbox.draw();
 //        UpgradesSlotsPanel
-        TextBox upgradebox = new TextBox(Color.blue, Color.black, new int[]{95, 405,405, 95}, new int[]{305, 305, 380, 380}, "Press for upgrades", g);
+        TextBox upgradebox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{305, 305, 380, 380}, "Press for upgrades", g);
         upgradebox.draw();
 //        auto timer
-        TextBox autoTimer = new TextBox(Color.blue, Color.black, new int[]{95, 405, 405, 95}, new int[]{410, 410, 485, 485}, "Auto Timer:" + auto, g);
+        TextBox autoTimer = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{410, 410, 485, 485}, "Auto Timer:" + auto, g);
         if (UpgradePanel.autoo) {
             autoTimer.draw();
         }
@@ -250,13 +250,13 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
         if (MyMouseListener.clicked) {
             if(scoresheetbox.slotsClicked()) {
-                Main.scoreFrame.setBounds(600, 130, 900, 525);
+                Main.scoreFrame.setBounds(600, 130, Toolkit.getDefaultToolkit().getScreenSize().width/7, 525);
                 ScorePanel scorepanel = new ScorePanel();
                 Main.scoreFrame.add(scorepanel);
                 Main.scoreFrame.setVisible(true);
             }
             if(upgradebox.slotsClicked()){
-                Main.upgradeFrame.setBounds(600, 130, 900, 525);
+                Main.upgradeFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 900, 525);
                 UpgradePanel upgradePanel = new UpgradePanel();
                 Main.upgradeFrame.add(upgradePanel);
                 Main.upgradeFrame.setVisible(true);

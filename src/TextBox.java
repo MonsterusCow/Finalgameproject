@@ -33,7 +33,7 @@ public class TextBox {
 
     public boolean slotsClicked(){
         if (MyMouseListener.clickedx >= x[0] && MyMouseListener.clickedx <= x[1]){
-            if (MyMouseListener.clickedy >= y[0] && MyMouseListener.clickedy <= y[3]){
+            if (MyMouseListener.clickedy >= y[0]+30 && MyMouseListener.clickedy <= y[3]+30){
                 return true;
             }
         }
@@ -42,7 +42,7 @@ public class TextBox {
 
     public boolean upgrClicked(){
         if (UpgradesMouseListener.clickedx >= x[0] && UpgradesMouseListener.clickedx <= x[1]){
-            if (UpgradesMouseListener.clickedy >= y[0] && UpgradesMouseListener.clickedy <= y[3]){
+            if (UpgradesMouseListener.clickedy >= y[0]+30 && UpgradesMouseListener.clickedy <= y[3]+30){
                 return true;
             }
         }

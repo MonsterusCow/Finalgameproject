@@ -7,8 +7,9 @@ public class MyMouseListener implements MouseListener {
     static boolean clicked;
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("x:" + (MouseInfo.getPointerInfo().getLocation().x - Main.upgradeFrame.getX()) + " y:" + (MouseInfo.getPointerInfo().getLocation().y - Main.upgradeFrame.getY()));
-
+        System.out.println("x:" + (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()) + " y:" + (MouseInfo.getPointerInfo().getLocation().y - (Main.frame.getY()+30)));
+//
+        // -
     }
     @Override
     public void mousePressed(MouseEvent e) {

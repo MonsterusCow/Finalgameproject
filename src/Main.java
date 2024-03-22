@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
 //Main Frame ----------------------------------------------------------------------------------------------------
-        frame.setBounds(startcordx, startcordy, 1350, 800);
+        frame.setBounds(startcordx, startcordy, 1000, 600);
         frame.setResizable(false);
 
         SlotsPanel panel = new SlotsPanel();
