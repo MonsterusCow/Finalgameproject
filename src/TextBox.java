@@ -31,6 +31,11 @@ public class TextBox {
         g.drawString(text, x[0]+center, y[0]+((y[3]-y[0])/2));
     }
 
+    public void erase(){
+        x = new int[] {0,0,0,0};
+        y = new int[] {0,0,0,0};
+    }
+
     public boolean slotsClicked(){
         if (MyMouseListener.clickedx >= x[0] && MyMouseListener.clickedx <= x[1]){
             if (MyMouseListener.clickedy >= y[0]+30 && MyMouseListener.clickedy <= y[3]+30){

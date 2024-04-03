@@ -231,16 +231,16 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         //main one
         g.fillPolygon(new int[]{75, 425,425, 75}, new int[]{75, 75, 575, 575}, 4);
 //        scoresheet
-        TextBox scoresheetbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{95, 95, 170, 170}, "Press for score sheet :)", g);
+        TextBox scoresheetbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{100, 100, 170, 170}, "Press for score sheet :)", g);
         scoresheetbox.draw();
 //        Points
-        TextBox pointsbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{200, 200, 275, 275}, "Points:"+points, g);
+        TextBox pointsbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{200, 200, 270, 270}, "Points:"+points, g);
         pointsbox.draw();
 //        UpgradesSlotsPanel
-        TextBox upgradebox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{305, 305, 380, 380}, "Press for upgrades", g);
+        TextBox upgradebox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{300, 300, 370, 370}, "Press for upgrades", g);
         upgradebox.draw();
 //        auto timer
-        TextBox autoTimer = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{410, 410, 485, 485}, "Auto Timer:" + auto, g);
+        TextBox autoTimer = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{400, 400, 470, 470}, "Auto Timer:" + auto, g);
         if (UpgradePanel.autoo) {
             autoTimer.draw();
         }
@@ -256,11 +256,12 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                 Main.scoreFrame.setVisible(true);
             }
             if(upgradebox.slotsClicked()){
-                Main.upgradeFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 900, 525);
+                Main.upgradeFrame.setBounds(UpgradePanel.xframe, UpgradePanel.yframe, 900, 525);
                 UpgradePanel upgradePanel = new UpgradePanel();
                 Main.upgradeFrame.add(upgradePanel);
                 Main.upgradeFrame.setVisible(true);
             }
+            MyMouseListener.clicked = false;
         }
 
 // Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------
