@@ -28,7 +28,7 @@ public class TextBox {
         if(center < 0){
             center = 0;
         }
-        g.drawString(text, x[0]+center, y[0] + 45);
+        g.drawString(text, x[0]+center, y[0]+((y[3]-y[0])/2));
     }
 
     public boolean slotsClicked(){

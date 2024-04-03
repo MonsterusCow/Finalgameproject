@@ -250,7 +250,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
         if (MyMouseListener.clicked) {
             if(scoresheetbox.slotsClicked()) {
-                Main.scoreFrame.setBounds(600, 130, Toolkit.getDefaultToolkit().getScreenSize().width/7, 525);
+                Main.scoreFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 900, 525);
                 ScorePanel scorepanel = new ScorePanel();
                 Main.scoreFrame.add(scorepanel);
                 Main.scoreFrame.setVisible(true);
