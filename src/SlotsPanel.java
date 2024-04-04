@@ -15,6 +15,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     static int points = 1100;
     int[] lastrolled = new int[3];
     int auto = 0;
+    static int timerWait = 30;
 
     BufferedImage slothandledn, slothandleup, slotmachineful, slotmachineemp;
     BufferedImage[] slots = new BufferedImage[4];
@@ -23,6 +24,19 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     BufferedImage perm1, perm2, perm3;
     BufferedImage Casino;
 
+//reset Method ------------------------------------------------------------------------------------------------------------
+
+    public void reset() {
+    up =true;
+    timer =false;
+    wait =0;
+    points =500;
+    lastrolled =new int[3];
+    auto =0;
+    timerWait =30;
+    UpgradePanel.autoo = false;
+    UpgradePanel.autoBought = false;
+}
 
 //Resize Method ------------------------------------------------------------------------------------------------------------
     public static BufferedImage resize(BufferedImage img, int newW, int newH) {
@@ -206,7 +220,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                         if (!UpgradePanel.autoo) {
                             timer = false;
                         } else {
-                            auto = 30;
+                            auto = timerWait;
                         }
                         up = true;
                         wait = 0;
@@ -262,6 +276,22 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                 Main.upgradeFrame.setVisible(true);
             }
             MyMouseListener.clicked = false;
+        }
+
+// If points = 0 (end)----------------------------------------------------------------------------------------------------------------------------------------------------
+
+        if (points == 0){
+            int response = JOptionPane.showConfirmDialog(null,"Womp Womp you lost everything and you are now homeless. Restart?", "You Lost", JOptionPane.YES_NO_OPTION);
+            if (JOptionPane.YES_OPTION == response) {
+                reset();
+            } else if (JOptionPane.NO_OPTION == response) {
+//                Main.frame.dispatchEvent(new WindowEvent(Main.frame, Main.WindowEvent.WINDOW_CLOSING));
+                Main.frame.dispose();
+                Main.scoreFrame.dispose();
+                Main.upgradeFrame.dispose();
+            }
+
+
         }
 
 // Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------

@@ -7,7 +7,9 @@ public class UpgradePanel extends JPanel implements ImageObserver {
     static boolean autoo = false;
     static boolean autoBought = false;
     static TextBox buyAuto, auto, downTime;
-    Color autc = new Color(17, 48, 182);
+    Color active = new Color(17, 48, 182);
+    Color down =new Color(102, 110, 102);
+
     static int xframe =Toolkit.getDefaultToolkit().getScreenSize().width/7;
     static int yframe = 130;
 
@@ -27,14 +29,14 @@ public class UpgradePanel extends JPanel implements ImageObserver {
         box.draw();
 
             if (!autoBought) {
-                buyAuto = new TextBox(autc, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "1000 Points = Auto Puller", g);
+                buyAuto = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "1000 Points = Auto Puller", g);
             } else {
                 if (autoo) {
                     buyAuto.erase();
-                    auto = new TextBox(autc, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "Stop auto", g);
+                    auto = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "Stop auto", g);
                 } else {
                     buyAuto.erase();
-                    auto = new TextBox(autc, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "Start auto", g);
+                    auto = new TextBox(down, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "Start auto", g);
                 }
             }
             if (buyAuto != null) {
@@ -45,11 +47,14 @@ public class UpgradePanel extends JPanel implements ImageObserver {
             }
 
 
-
-
             if (autoBought){
-                downTime = new TextBox(autc, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "100 Points = -2 Timer Wait", g);
-                downTime.draw();
+                if (SlotsPanel.timerWait > 8) {
+                    downTime = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "100 Points = -2 Timer Wait", g);
+                    downTime.draw();
+                } else {
+                    downTime = new TextBox(down, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "100 Points = -2 Timer Wait", g);
+                    downTime.draw();
+                }
             }
 
 
@@ -60,10 +65,8 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                     if (autoBought) {
                         if (!autoo) {
                             autoo = true;
-                            autc = new Color(17, 48, 182);
                         } else {
                             autoo = false;
-                            autc = new Color(102, 110, 102);
                         }
                     }
                 }
@@ -74,6 +77,14 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                     autoBought = true;
                     SlotsPanel.points -= 1000;
                     System.out.println("dasd");
+                }
+            }
+
+            if (downTime.upgrClicked()){
+                if (SlotsPanel.points >= 100){
+                    SlotsPanel.points -= 100;
+                } else {
+                JOptionPane.showMessageDialog(null, "Not enough points to buy");
                 }
             }
             UpgradesMouseListener.clicked = false;
