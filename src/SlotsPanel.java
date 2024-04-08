@@ -290,8 +290,6 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                 Main.scoreFrame.dispose();
                 Main.upgradeFrame.dispose();
             }
-
-
         }
 
 // Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------

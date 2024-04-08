@@ -1,13 +1,21 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
 
 public class TextBox {
 
     Color bc, tc;
     int[] x, y;
+    int x1, y1;
     String text;
     Graphics g;
     int length;
     int center;
+    BufferedImage image;
+    String direct;
 
     public TextBox(Color bc, Color tc, int[] x, int[] y, String text, Graphics g){
         this.bc = bc;
@@ -17,6 +25,14 @@ public class TextBox {
         this.text = text;
         this.g = g;
         length = text.length()*10;
+    }
+
+    public TextBox(BufferedImage image, String direct, int x, int y, Graphics g){
+        this.image = image;
+        this.direct = direct;
+        this.x1 = x;
+        this.y1 = y;
+        this.g = g;
     }
 
     public void draw(){
@@ -29,6 +45,13 @@ public class TextBox {
             center = 0;
         }
         g.drawString(text, x[0]+center, y[0]+((y[3]-y[0])/2));
+    }
+
+    public void drawImgBox(ImageObserver thi, int x, int y){
+        try { image = ImageIO.read(new File(direct)); } catch (IOException e) { e.printStackTrace(); }
+        image = SlotsPanel.resize(image, x, y);
+        g.drawImage(image, x1, y1, thi);
+
     }
 
     public void erase(){

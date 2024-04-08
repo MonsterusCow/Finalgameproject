@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="Slots work">
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="Stuff">
+      <change afterPath="$PROJECT_DIR$/Images/Upgrade Stuff/X.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlotsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UpgradePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,11 +75,11 @@
       <recent name="$PROJECT_DIR$/Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images/Upgrade Stuff" />
       <recent name="D:\Users\Ryan\IdeaProjects\Finalgameproject\Images\Roll parts" />
       <recent name="D:\Users\Ryan\IdeaProjects\Finalgameproject\Images" />
       <recent name="$PROJECT_DIR$/Images/Machine parts" />
       <recent name="$PROJECT_DIR$/Images/Arrows" />
-      <recent name="$PROJECT_DIR$/Images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -230,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711038636107</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Stuff">
+      <option name="closed" value="true" />
+      <created>1712248302270</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1712248302270</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +262,7 @@
     <MESSAGE value="idkdafggwff" />
     <MESSAGE value="YES AUTO" />
     <MESSAGE value="button being a bitch" />
-    <option name="LAST_COMMIT_MESSAGE" value="button being a bitch" />
+    <MESSAGE value="Stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stuff" />
   </component>
 </project>
