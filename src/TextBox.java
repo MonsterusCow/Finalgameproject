@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
@@ -9,7 +10,6 @@ public class TextBox {
 
     Color bc, tc;
     int[] x, y;
-    int x1, y1;
     String text;
     Graphics g;
     int length;
@@ -27,11 +27,11 @@ public class TextBox {
         length = text.length()*10;
     }
 
-    public TextBox(BufferedImage image, String direct, int x, int y, Graphics g){
+    public TextBox(BufferedImage image, String direct, int[] x, int[] y, Graphics g){
         this.image = image;
         this.direct = direct;
-        this.x1 = x;
-        this.y1 = y;
+        this.x = x;
+        this.y = y;
         this.g = g;
     }
 
@@ -47,10 +47,10 @@ public class TextBox {
         g.drawString(text, x[0]+center, y[0]+((y[3]-y[0])/2));
     }
 
-    public void drawImgBox(ImageObserver thi, int x, int y){
+    public void drawImgBox(ImageObserver thi){
         try { image = ImageIO.read(new File(direct)); } catch (IOException e) { e.printStackTrace(); }
-        image = SlotsPanel.resize(image, x, y);
-        g.drawImage(image, x1, y1, thi);
+        image = SlotsPanel.resize(image, (this.x[1]-this.x[0]), (this.y[2]-this.y[0]));
+        g.drawImage(image, this.x[0], this.y[0], thi);
 
     }
 
@@ -59,18 +59,9 @@ public class TextBox {
         y = new int[] {0,0,0,0};
     }
 
-    public boolean slotsClicked(){
-        if (MyMouseListener.clickedx >= x[0] && MyMouseListener.clickedx <= x[1]){
-            if (MyMouseListener.clickedy >= y[0]+30 && MyMouseListener.clickedy <= y[3]+30){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean upgrClicked(){
-        if (UpgradesMouseListener.clickedx >= x[0] && UpgradesMouseListener.clickedx <= x[1]){
-            if (UpgradesMouseListener.clickedy >= y[0]+30 && UpgradesMouseListener.clickedy <= y[3]+30){
+    public boolean Clicked(int x, int y){
+        if (x >= this.x[0] && x <= this.x[1]){
+            if (y >= this.y[0]+30 && y <= this.y[3]+30){
                 return true;
             }
         }

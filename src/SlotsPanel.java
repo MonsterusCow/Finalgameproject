@@ -190,12 +190,12 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
         //When click handle ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        if (MyMouseListener.clicked) {
-            if (MyMouseListener.clickedx >= 887 && MyMouseListener.clickedx <= 930) {
-                if (MyMouseListener.clickedy >= 237 && MyMouseListener.clickedy <= 402) {
+        if (SlotsMouseListener.clicked) {
+            if (SlotsMouseListener.clickedx >= 887 && SlotsMouseListener.clickedx <= 930) {
+                if (SlotsMouseListener.clickedy >= 237 && SlotsMouseListener.clickedy <= 402) {
                     up = false;
-                    MyMouseListener.clickedx = 0;
-                    MyMouseListener.clickedy = 0;
+                    SlotsMouseListener.clickedx = 0;
+                    SlotsMouseListener.clickedy = 0;
                     timer = true;
                     if (wait == 0){
                         points -= 10;
@@ -258,24 +258,30 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         if (UpgradePanel.autoo) {
             autoTimer.draw();
         }
+//        exit X
+        TextBox exit = new TextBox(UpgradePanel.Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
+        exit.drawImgBox(this);
 
 
 //Clicking info buttons----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        if (MyMouseListener.clicked) {
-            if(scoresheetbox.slotsClicked()) {
+        if (SlotsMouseListener.clicked) {
+            if(scoresheetbox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
                 Main.scoreFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 900, 525);
                 ScorePanel scorepanel = new ScorePanel();
                 Main.scoreFrame.add(scorepanel);
                 Main.scoreFrame.setVisible(true);
             }
-            if(upgradebox.slotsClicked()){
+            if(upgradebox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
                 Main.upgradeFrame.setBounds(UpgradePanel.xframe, UpgradePanel.yframe, 900, 525);
                 UpgradePanel upgradePanel = new UpgradePanel();
                 Main.upgradeFrame.add(upgradePanel);
                 Main.upgradeFrame.setVisible(true);
             }
-            MyMouseListener.clicked = false;
+            if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
+                Main.frame.dispose();
+            }
+            SlotsMouseListener.clicked = false;
         }
 
 // If points = 0 (end)----------------------------------------------------------------------------------------------------------------------------------------------------

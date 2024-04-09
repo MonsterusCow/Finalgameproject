@@ -16,7 +16,7 @@ public class Main {
 
         SlotsPanel panel = new SlotsPanel();
 
-        MyMouseListener listen = new MyMouseListener();
+        SlotsMouseListener listen = new SlotsMouseListener();
         UpgradesMouseListener upg = new UpgradesMouseListener();
         MyKeyListener keylisten = new MyKeyListener();
 

@@ -17,7 +17,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
     static int xframe =Toolkit.getDefaultToolkit().getScreenSize().width/7;
     static int yframe = 130;
 
-    BufferedImage Ximg;
+    static BufferedImage Ximg;
 
     public UpgradePanel() {
         setBackground(new Color(55, 208, 30));
@@ -33,8 +33,8 @@ public class UpgradePanel extends JPanel implements ImageObserver {
         TextBox box = new TextBox(Color.black, Color.black, new int[]{300, 600, 600, 300}, new int[]{50, 50, 425, 425}, "", g);
         box.draw();
 
-        TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", 0, 0, g);
-        exit.drawImgBox(this, 30, 30);
+        TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
+        exit.drawImgBox(this);
 
             if (!autoBought) {
                 buyAuto = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "1000 Points = Auto Puller", g);
@@ -69,7 +69,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
 
         if (UpgradesMouseListener.clicked) {
             if (autoBought) {
-                if (reduceTime.upgrClicked()) {
+                if (reduceTime.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)) {
                     if (SlotsPanel.points >= 100) {
                         SlotsPanel.points -= 100;
                         SlotsPanel.timerWait -= 2;
@@ -80,7 +80,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
             }
 
             if (autoBought) {
-                if (auto.upgrClicked()) {
+                if (auto.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)) {
                     if (autoBought) {
                         if (!autoo) {
                             autoo = true;
@@ -89,7 +89,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                         }
                     }
                 }
-            } else if (buyAuto.upgrClicked()){
+            } else if (buyAuto.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
                 if (SlotsPanel.points >= 1000) {
                     repaint();
                     autoo = true;
@@ -99,7 +99,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                 }
             }
 
-            if (exit.upgrClicked()){
+            if (exit.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
                 Main.upgradeFrame.dispose();
             }
 

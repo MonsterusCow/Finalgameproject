@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="Stuff">
-      <change afterPath="$PROJECT_DIR$/Images/Upgrade Stuff/X.png" afterDir="false" />
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="weird x aint working">
+      <change afterPath="$PROJECT_DIR$/src/ScoresMouseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsMouseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScorePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlotsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UpgradePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpgradesMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradesMouseListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +39,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="78ee0fd2-5504-4c4e-a069-727328120342" />
+        <option name="accountId" value="86973fbb-debf-4c77-974f-45fde294bb5d" />
         <option name="url" value="https://github.com/MonsterusCow/Finalgameproject.git" />
       </UrlAndAccount>
     </option>
@@ -240,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712248302270</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="weird x aint working">
+      <option name="closed" value="true" />
+      <created>1712594159833</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712594159833</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +275,7 @@
     <MESSAGE value="YES AUTO" />
     <MESSAGE value="button being a bitch" />
     <MESSAGE value="Stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stuff" />
+    <MESSAGE value="weird x aint working" />
+    <option name="LAST_COMMIT_MESSAGE" value="weird x aint working" />
   </component>
 </project>
