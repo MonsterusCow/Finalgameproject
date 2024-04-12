@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="weird x aint working">
-      <change afterPath="$PROJECT_DIR$/src/ScoresMouseListener.java" afterDir="false" />
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="yippee x workin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsMouseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScorePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlotsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UpgradePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UpgradesMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradesMouseListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712594159833</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="yippee x workin">
+      <option name="closed" value="true" />
+      <created>1712679971650</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1712679971650</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +278,7 @@
     <MESSAGE value="button being a bitch" />
     <MESSAGE value="Stuff" />
     <MESSAGE value="weird x aint working" />
-    <option name="LAST_COMMIT_MESSAGE" value="weird x aint working" />
+    <MESSAGE value="yippee x workin" />
+    <option name="LAST_COMMIT_MESSAGE" value="yippee x workin" />
   </component>
 </project>

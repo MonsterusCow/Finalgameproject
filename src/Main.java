@@ -6,7 +6,7 @@ public class Main {
     static JFrame frame = new JFrame();
     static JFrame scoreFrame = new JFrame();
     static JFrame upgradeFrame = new JFrame();
-    static int startcordx = Toolkit.getDefaultToolkit().getScreenSize().width/7;
+    static int startcordx = Toolkit.getDefaultToolkit().getScreenSize().width/7-100;
     static int startcordy = 50;
     public static void main(String[] args) {
 

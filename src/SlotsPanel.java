@@ -6,6 +6,7 @@ import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 import java.lang.*;
+import java.util.ArrayList;
 
 public class SlotsPanel extends JPanel implements ImageObserver {
 
