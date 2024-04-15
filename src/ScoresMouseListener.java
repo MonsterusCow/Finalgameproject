@@ -7,13 +7,13 @@ public class ScoresMouseListener implements MouseListener {
     static boolean clicked;
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("x:" + (MouseInfo.getPointerInfo().getLocation().x - Main.scoreFrame.getX()) + " y:" + (MouseInfo.getPointerInfo().getLocation().y - (Main.scoreFrame.getY()+30)));
+        System.out.println("x:" + (MouseInfo.getPointerInfo().getLocation().x - Main.scorePanel.getX()) + " y:" + (MouseInfo.getPointerInfo().getLocation().y - (Main.scorePanel.getY()+30)));
 
     }
     @Override
     public void mousePressed(MouseEvent e) {
-        clickedx = MouseInfo.getPointerInfo().getLocation().x - Main.scoreFrame.getX();
-        clickedy = MouseInfo.getPointerInfo().getLocation().y - Main.scoreFrame.getY();
+        clickedx = MouseInfo.getPointerInfo().getLocation().x - Main.scorePanel.getX();
+        clickedy = MouseInfo.getPointerInfo().getLocation().y - Main.scorePanel.getY();
         clicked = true;
     }
     @Override

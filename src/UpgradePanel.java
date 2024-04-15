@@ -27,8 +27,8 @@ public class UpgradePanel extends JPanel implements ImageObserver {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        xframe = Main.upgradeFrame.getX();
-        yframe = Main .upgradeFrame.getY();
+        xframe = Main.upgradePanel.getX();
+        yframe = Main .upgradePanel.getY();
 
         TextBox box = new TextBox(Color.black, Color.black, new int[]{300, 600, 600, 300}, new int[]{50, 50, 425, 425}, "", g);
         box.draw();
@@ -100,7 +100,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
             }
 
             if (exit.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
-                Main.upgradeFrame.dispose();
+                Main.upgradePanel.dispose();
             }
 
             UpgradesMouseListener.clicked = false;

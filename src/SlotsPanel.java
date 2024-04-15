@@ -268,16 +268,16 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
         if (SlotsMouseListener.clicked) {
             if(scoresheetbox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
-                Main.scoreFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 900, 525);
+                Main.scorePanel.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 900, 525);
                 ScorePanel scorepanel = new ScorePanel();
-                Main.scoreFrame.add(scorepanel);
-                Main.scoreFrame.setVisible(true);
+                Main.scorePanel.add(scorepanel);
+                Main.scorePanel.setVisible(true);
             }
             if(upgradebox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
-                Main.upgradeFrame.setBounds(UpgradePanel.xframe, UpgradePanel.yframe, 900, 525);
+                Main.upgradePanel.setBounds(UpgradePanel.xframe, UpgradePanel.yframe, 900, 525);
                 UpgradePanel upgradePanel = new UpgradePanel();
-                Main.upgradeFrame.add(upgradePanel);
-                Main.upgradeFrame.setVisible(true);
+                Main.upgradePanel.add(upgradePanel);
+                Main.upgradePanel.setVisible(true);
             }
             if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
                 Main.frame.dispose();
@@ -294,8 +294,8 @@ public class SlotsPanel extends JPanel implements ImageObserver {
             } else if (JOptionPane.NO_OPTION == response) {
 //                Main.frame.dispatchEvent(new WindowEvent(Main.frame, Main.WindowEvent.WINDOW_CLOSING));
                 Main.frame.dispose();
-                Main.scoreFrame.dispose();
-                Main.upgradeFrame.dispose();
+                Main.scorePanel.dispose();
+                Main.upgradePanel.dispose();
             }
         }
 

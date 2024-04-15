@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="yippee x workin">
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="give half points for 2 things">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Roll parts/ScoreSheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Roll parts/ScoreSheet.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScorePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScoresMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoresMouseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlotsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpgradePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpgradesMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradesMouseListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +78,11 @@
       <recent name="$PROJECT_DIR$/Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images/Roll parts" />
       <recent name="$PROJECT_DIR$/Images/Upgrade Stuff" />
       <recent name="D:\Users\Ryan\IdeaProjects\Finalgameproject\Images\Roll parts" />
       <recent name="D:\Users\Ryan\IdeaProjects\Finalgameproject\Images" />
       <recent name="$PROJECT_DIR$/Images/Machine parts" />
-      <recent name="$PROJECT_DIR$/Images/Arrows" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -254,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712679971650</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="give half points for 2 things">
+      <option name="closed" value="true" />
+      <created>1712939433914</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1712939433914</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +292,7 @@
     <MESSAGE value="Stuff" />
     <MESSAGE value="weird x aint working" />
     <MESSAGE value="yippee x workin" />
-    <option name="LAST_COMMIT_MESSAGE" value="yippee x workin" />
+    <MESSAGE value="give half points for 2 things" />
+    <option name="LAST_COMMIT_MESSAGE" value="give half points for 2 things" />
   </component>
 </project>

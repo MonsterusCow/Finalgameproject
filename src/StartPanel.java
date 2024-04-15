@@ -22,8 +22,8 @@ public class StartPanel extends JPanel implements ImageObserver {
 
         String welcome = new String();
         g.setFont(new Font("Arial", Font.PLAIN, 20));
-        g.drawString("Hi, welcome to gambling. You can press the lever to start spinning.", 100, Main.scoreFrame.getHeight()/2);
-        g.drawString("Press the point list to see the prizes you can get", Main.scoreFrame.getWidth()/2-250, Main.scoreFrame.getHeight()/2+30);
+        g.drawString("Hi, welcome to gambling. You can press the lever to start spinning.", 100, Main.scorePanel.getHeight()/2);
+        g.drawString("Press the point list to see the prizes you can get", Main.scorePanel.getWidth()/2-250, Main.scorePanel.getHeight()/2+30);
         //Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------
 
         try {

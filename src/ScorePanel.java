@@ -20,13 +20,14 @@ public class ScorePanel extends JPanel implements ImageObserver {
 
         //Words----------------------------------------------------------------------------------------------------------------------------------------------------
         try { sheet = ImageIO.read(new File("Images/Roll Parts/ScoreSheet.png")); } catch (IOException e) { e.printStackTrace(); }
+        sheet = SlotsPanel.resize(sheet, 900, 500);
         g.drawImage(sheet, 0, 0, this);
         TextBox exit = new TextBox(UpgradePanel.Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
         exit.drawImgBox(this);
         //Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------
 
         if (exit.Clicked(ScoresMouseListener.clickedx, ScoresMouseListener.clickedy)){
-            Main.scoreFrame.dispose();
+            Main.scorePanel.dispose();
         }
 
         try {
