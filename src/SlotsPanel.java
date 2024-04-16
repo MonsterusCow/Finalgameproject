@@ -21,6 +21,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     BufferedImage slothandledn, slothandleup, slotmachineful, slotmachineemp;
     BufferedImage[] slots = new BufferedImage[4];
     BufferedImage Cherry, Lemon, Melon, Heart, Bell, Shoe, Diamond, Bar, Seven;
+    int[] scores = new int[] {100,200,300,400,500,700,900,1000,2000};
     BufferedImage first, second, third;
     BufferedImage perm1, perm2, perm3;
     BufferedImage Casino;
@@ -137,27 +138,19 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     }
 //Check for points method ------------------------------------------------------------------------------------------------------------
     public void points() {
-        if (lastrolled[0] == 0 && lastrolled[1] == 0 && lastrolled[2] == 0){
-            points += 100;
-        } if ((lastrolled[0] == 0 && (lastrolled[0] == lastrolled[1] || lastrolled[0] == lastrolled[2])) || (lastrolled[1] == 0 && lastrolled[1]==lastrolled[2])) {
-            points += 50;
-            System.out.println(points);
-        } else if (lastrolled[0] == 1 && lastrolled[1] == 1 && lastrolled[2] == 1){
-            points += 200;
-        } else if (lastrolled[0] == 2 && lastrolled[1] == 2 && lastrolled[2] == 2){
-            points += 300;
-        } else if (lastrolled[0] == 3 && lastrolled[1] == 3 && lastrolled[2] == 3){
-            points += 400;
-        } else if (lastrolled[0] == 4 && lastrolled[1] == 4 && lastrolled[2] == 4){
-            points += 500;
-        } else if (lastrolled[0] == 5 && lastrolled[1] == 5 && lastrolled[2] == 5){
-            points += 700;
-        } else if (lastrolled[0] == 6 && lastrolled[1] == 6 && lastrolled[2] == 6){
-            points += 900;
-        } else if (lastrolled[0] == 7 && lastrolled[1] == 7 && lastrolled[2] == 7){
-            points += 1000;
-        } else if (lastrolled[0] == 8 && lastrolled[1] == 8 && lastrolled[2] == 8){
-            points += 2000;
+        boolean returned = false;
+        for (int i = 0; i < 9; i++) {
+            if (lastrolled[0] == i && lastrolled[1] == i && lastrolled[2] == i){
+                points += scores[i];
+                returned = true;
+            }
+        }
+        if (!returned){
+            for (int j= 0; j < 9; j++) {
+                if ((lastrolled[0] == j && (lastrolled[0] == lastrolled[1] || lastrolled[0] == lastrolled[2])) || (lastrolled[1] == j && lastrolled[1] == lastrolled[2])) {
+                    points += scores[j] / 2;
+                }
+            }
         }
     }
     //Contructor ------------------------------------------------------------------------------------------------------------
