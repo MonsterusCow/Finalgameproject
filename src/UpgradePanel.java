@@ -1,3 +1,5 @@
+import org.w3c.dom.Text;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +12,9 @@ public class UpgradePanel extends JPanel implements ImageObserver {
 
     static boolean autoo = false;
     static boolean autoBought = false;
+    static boolean error = false;
     static TextBox buyAuto, auto, reduceTime;
+    TextBox affirm;
     Color active = new Color(17, 48, 182);
     Color down =new Color(102, 110, 102);
 
@@ -56,25 +60,31 @@ public class UpgradePanel extends JPanel implements ImageObserver {
 
 
             if (autoBought){
-                if (SlotsPanel.timerWait > 8) {
-                    reduceTime = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "100 Points = -2 Timer Wait", g);
+                if (SlotsPanel.timerWait > 0) {
+                    reduceTime = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "300 Points = -2 Timer Wait", g);
                     reduceTime.draw();
                 } else {
-                    reduceTime = new TextBox(down, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "100 Points = -2 Timer Wait", g);
+                    reduceTime = new TextBox(down, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "300 Points = -2 Timer Wait", g);
                     reduceTime.draw();
                 }
             }
 
+        if (error) {
+            TextBox nuhuh = new TextBox(Color.red, Color.black, new int[]{50, Main.upgradePanel.getWidth() - 50, Main.upgradePanel.getWidth() - 50, 50}, new int[]{50, 50, Main.upgradePanel.getHeight() - 50, Main.upgradePanel.getHeight() - 50}, "Not enough points to buy", g);
+            nuhuh.draw();
+            affirm = new TextBox(active, Color.black, new int[]{nuhuh.getxTLBL() + 40, nuhuh.getxTRBR() - 40, nuhuh.getxTRBR() - 40, nuhuh.getxTLBL() + 40}, new int[]{nuhuh.getyB() - 50, nuhuh.getyB() - 50, nuhuh.getyB() - 10, nuhuh.getyB() - 10}, "ok", g);
+            affirm.draw();
+        }
 
 
         if (UpgradesMouseListener.clicked) {
             if (autoBought) {
                 if (reduceTime.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)) {
-                    if (SlotsPanel.points >= 100) {
-                        SlotsPanel.points -= 100;
+                    if (SlotsPanel.points >= 300) {
+                        SlotsPanel.points -= 300;
                         SlotsPanel.timerWait -= 2;
                     } else {
-                        JOptionPane.showMessageDialog(null, "Not enough points to buy");
+                        error = true;
                     }
                 }
             }
@@ -103,8 +113,13 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                 Main.upgradePanel.dispose();
             }
 
+            if (affirm.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
+                error = false;
+            }
+
             UpgradesMouseListener.clicked = false;
         }
+
 
         //repaint--------------------------------------------------------------------------
         repaint();

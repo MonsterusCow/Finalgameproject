@@ -185,21 +185,23 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         //When click handle ----------------------------------------------------------------------------------------------------------------------------------------------------
 
         if (SlotsMouseListener.clicked) {
-            if (SlotsMouseListener.clickedx >= 887 && SlotsMouseListener.clickedx <= 930) {
-                if (SlotsMouseListener.clickedy >= 237 && SlotsMouseListener.clickedy <= 402) {
-                    up = false;
-                    SlotsMouseListener.clickedx = 0;
-                    SlotsMouseListener.clickedy = 0;
-                    timer = true;
-                    if (wait == 0){
-                        points -= 10;
+            if (!UpgradePanel.autoo) {
+                if (SlotsMouseListener.clickedx >= 887 && SlotsMouseListener.clickedx <= 930) {
+                    if (SlotsMouseListener.clickedy >= 237 && SlotsMouseListener.clickedy <= 402) {
+                        up = false;
+                        SlotsMouseListener.clickedx = 0;
+                        SlotsMouseListener.clickedy = 0;
+                        timer = true;
+                        if (wait == 0) {
+                            points -= 10;
+                        }
                     }
                 }
             }
         }
 
         //Timer to spin and put handle up ----------------------------------------------------------------------------------------------------------------------------------------------------
-        if (timer){
+        if (timer || UpgradePanel.autoo){
                 if (auto == 0) {
                     wait++;
                     if (wait % 2 == 0) {
@@ -308,153 +310,3 @@ public class SlotsPanel extends JPanel implements ImageObserver {
 
 
 }
-
-
-//    static double size = 50.0;
-//    BufferedImage arrow1, arrow2, arrow3, arrow4, arrow5, arrow6, arrow7, arrow8, arrow9, arrow10, arrow11, arrow12, arrow13, arrow14, arrow15, arrow16;
-//    int updownAmo = 0;
-//    int lefrigAmo = 8;
-//    int add1;
-//    int add2;
-//    static int wait = 1;
-//    int angle = 1;
-//    BufferedImage[] arrows = new BufferedImage[16];
-
-//    static ArrayList<Block> blocks = new ArrayList<>(1);
-
-//        public void count(){
-//            if (angle==1){ add1 = 0; add2 = 8; }
-//            if (angle==2){ add1 = 3; add2 = 8; }
-//            if (angle==3){ add1 = 5; add2 = 5; }
-//            if (angle==4){ add1 = 8; add2 = 3; }
-//            if (angle==5){ add1 = 8; add2 = 0; }
-//            if (angle==6){ add1 = 8; add2 = -3; }
-//            if (angle==7){ add1 = 5; add2 = -5; }
-//            if (angle==8){ add1 = 3; add2 = -8; }
-//            if (angle==9){ add1 = 0; add2 = -8; }
-//            if (angle==10){ add1 = -3; add2 = -8; }
-//            if (angle==11){ add1 = -5; add2 = -5; }
-//            if (angle==12){ add1 = -8; add2 = -3; }
-//            if (angle==13){ add1 = -8; add2 = 0; }
-//            if (angle==14){ add1 = -8; add2 = 3; }
-//            if (angle==15){ add1 = -5; add2 = 5; }
-//            if (angle==16){ add1 = -3; add2 = 8; }
-//            updownAmo = add1;
-//            lefrigAmo = add2;
-//        }
-//
-
-
-
-//        //make cooldown--------------------------------------------------------------------------
-//
-////        if (MyMouseListener.clicked) {
-////                blocks.add(new Block(updownAmo, lefrigAmo));
-////                MyMouseListener.clicked = false;
-////        }
-//        if (MyMouseListener.isdown) {
-//            if (wait == 0) {
-//            blocks.add(new Block(updownAmo, lefrigAmo));
-//            }
-//            wait++;
-//            if (wait == 10){
-//                wait = 0;
-//            }
-//        }
-//
-//        //Deletion--------------------------------------------------------------------------
-//
-//        for (int i = 0; i < blocks.size(); i++) {
-//            if (blocks.get(i).y[0] >= Main.frame.getHeight() + 100) {
-//                blocks.remove(i);
-//                System.out.println("removed");
-//            } else {
-//                if (blocks.get(i).y[1] >= Main.frame.getHeight() + 100) {
-//                    blocks.remove(i);
-//                    System.out.println("removed");
-//                    break;
-//                } else {
-//                    if (blocks.get(i).y[2] >= Main.frame.getHeight() + 100) {
-//                        blocks.remove(i);
-//                        System.out.println("removed");
-//                        break;
-//                    } else {
-//                        if (blocks.get(i).y[3] >= Main.frame.getHeight() + 100) {
-//                            blocks.remove(i);
-//                            System.out.println("removed");
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//        //Drawing--------------------------------------------------------------------------
-//
-//        for (int i = 0; i < blocks.size(); i++) {
-//            g.setColor(Color.BLACK);
-//            g.fillPolygon(blocks.get(i).getXArray(), blocks.get(i).getYArray(), 4);
-//
-//        }
-//
-//        //Putting frame back--------------------------------------------------------------------------
-//
-////            if (Main.frame.getX() != 0 || Main.frame.getY() != 0) {
-////                Main.frame.setBounds(Main.startcordx, Main.startcordy, 600, 600);
-////            }
-//
-//        //gravity--------------------------------------------------------------------------
-////
-////        for (int i = 0; i<blocks.size(); i++){
-////            blocks.get(i).gravity();
-////        }
-//
-//        //arrow--------------------------------------------------------------------------
-//
-//        try { arrow1 = ImageIO.read(new File("Images/arrow1.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow2 = ImageIO.read(new File("Images/arrow2.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow3 = ImageIO.read(new File("Images/arrow3.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow4 = ImageIO.read(new File("Images/arrow4.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow5 = ImageIO.read(new File("Images/arrow5.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow6 = ImageIO.read(new File("Images/arrow6.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow7 = ImageIO.read(new File("Images/arrow7.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow8 = ImageIO.read(new File("Images/arrow8.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow9 = ImageIO.read(new File("Images/arrow9.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow10 = ImageIO.read(new File("Images/arrow10.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow11 = ImageIO.read(new File("Images/arrow11.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow12 = ImageIO.read(new File("Images/arrow12.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow13 = ImageIO.read(new File("Images/arrow13.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow14 = ImageIO.read(new File("Images/arrow14.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow15 = ImageIO.read(new File("Images/arrow15.png")); } catch (IOException e) { e.printStackTrace(); }
-//        try { arrow16 = ImageIO.read(new File("Images/arrow16.png")); } catch (IOException e) { e.printStackTrace(); }
-//
-//        for(int i = 1; i < 17; i++){
-//            try { arrows[i-1] = ImageIO.read(new File("Images/arrow" + i + ".png")); } catch (Exception e){}
-//        }
-//
-//        g.drawImage(arrows[angle-1], (MouseInfo.getPointerInfo().getLocation().x - Main.frame.getX()) - arrow1.getWidth() / 2, (MouseInfo.getPointerInfo().getLocation().y - Main.frame.getY()) - (arrow1.getHeight() / 2 + 20), this);
-//
-//        //keypresses--------------------------------------------------------------------------
-//
-//        if (MyKeyListener.keydown1) {
-//            MyKeyListener.keydown1 = false;
-//            if (angle==1) {
-//                angle = 16;
-//            } else {
-//                angle--;
-//            }
-//            count();
-//        }
-//        if (MyKeyListener.keydown2) {
-//            MyKeyListener.keydown2 = false;
-//            if (angle==16){
-//                angle = 1;
-//            } else {
-//                angle++;
-//            }
-//            count();
-//        }
-
-
-
-

@@ -67,4 +67,17 @@ public class TextBox {
         }
         return false;
     }
+
+    public int getxTLBL(){
+        return x[0];
+    }
+    public int getxTRBR(){
+        return x[1];
+    }
+    public int getyT(){
+        return y[0];
+    }
+    public int getyB(){
+        return y[2];
+    }
 }
