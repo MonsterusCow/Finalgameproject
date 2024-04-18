@@ -31,14 +31,13 @@ public class UpgradePanel extends JPanel implements ImageObserver {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        xframe = Main.upgradePanel.getX();
-        yframe = Main .upgradePanel.getY();
+        xframe = Main.upgradeFrame.getX();
+        yframe = Main .upgradeFrame.getY();
 
         TextBox box = new TextBox(Color.black, Color.black, new int[]{300, 600, 600, 300}, new int[]{50, 50, 425, 425}, "", g);
         box.draw();
 
-        TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
-        exit.drawImgBox(this);
+
 
             if (!autoBought) {
                 buyAuto = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{70, 70, 145, 145}, "1000 Points = Auto Puller", g);
@@ -70,7 +69,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
             }
 
         if (error) {
-            TextBox nuhuh = new TextBox(Color.red, Color.black, new int[]{50, Main.upgradePanel.getWidth() - 50, Main.upgradePanel.getWidth() - 50, 50}, new int[]{50, 50, Main.upgradePanel.getHeight() - 50, Main.upgradePanel.getHeight() - 50}, "Not enough points to buy", g);
+            TextBox nuhuh = new TextBox(Color.red, Color.black, new int[]{50, Main.upgradeFrame.getWidth() - 50, Main.upgradeFrame.getWidth() - 50, 50}, new int[]{50, 50, Main.upgradeFrame.getHeight() - 50, Main.upgradeFrame.getHeight() - 50}, "Not enough points to buy", g);
             nuhuh.draw();
             affirm = new TextBox(active, Color.black, new int[]{nuhuh.getxTLBL() + 40, nuhuh.getxTRBR() - 40, nuhuh.getxTRBR() - 40, nuhuh.getxTLBL() + 40}, new int[]{nuhuh.getyB() - 50, nuhuh.getyB() - 50, nuhuh.getyB() - 10, nuhuh.getyB() - 10}, "ok", g);
             affirm.draw();
@@ -109,12 +108,15 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                 }
             }
 
-            if (exit.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
-                Main.upgradePanel.dispose();
-            }
+//            TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
+//            exit.drawImgBox(this);
+//            if (exit.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
+//                Main.upgradeFrame.setVisible(false);
+//            }
 
             if (affirm.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
                 error = false;
+
             }
 
             UpgradesMouseListener.clicked = false;
