@@ -75,8 +75,17 @@ public class UpgradePanel extends JPanel implements ImageObserver {
             affirm.draw();
         }
 
+        TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
+        exit.drawImgBox(this);
 
         if (UpgradesMouseListener.clicked) {
+
+            if (error) {
+                if (affirm.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)) {
+                    error = false;
+                }
+            }
+
             if (autoBought) {
                 if (reduceTime.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)) {
                     if (SlotsPanel.points >= 300) {
@@ -105,22 +114,22 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                     autoBought = true;
                     SlotsPanel.points -= 1000;
                     System.out.println("dasd");
+                } else {
+                    error = true;
                 }
             }
 
-//            TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
-//            exit.drawImgBox(this);
-//            if (exit.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
-//                Main.upgradeFrame.setVisible(false);
-//            }
-
-            if (affirm.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
-                error = false;
-
+            if (exit.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)){
+                Main.upgradeFrame.setVisible(false);
             }
+
+
 
             UpgradesMouseListener.clicked = false;
         }
+
+
+
 
 
         //repaint--------------------------------------------------------------------------

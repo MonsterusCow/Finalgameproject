@@ -276,13 +276,15 @@ public class SlotsPanel extends JPanel implements ImageObserver {
             }
             if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
                 Main.frame.dispose();
+                Main.scoreFrame.dispose();
+                Main.upgradeFrame.dispose();
             }
             SlotsMouseListener.clicked = false;
         }
 
 // If points = 0 (end)----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        if (points == 0){
+        if (points <= -10){
             int response = JOptionPane.showConfirmDialog(null,"Womp Womp you lost everything and you are now homeless. Restart?", "You Lost", JOptionPane.YES_NO_OPTION);
             if (JOptionPane.YES_OPTION == response) {
                 reset();
