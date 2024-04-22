@@ -275,7 +275,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                 Main.upgradeFrame.setVisible(true);
             }
             if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
-                Main.frame.dispose();
+                Main.slotsFrame.dispose();
                 Main.scoreFrame.dispose();
                 Main.upgradeFrame.dispose();
             }
@@ -289,8 +289,8 @@ public class SlotsPanel extends JPanel implements ImageObserver {
             if (JOptionPane.YES_OPTION == response) {
                 reset();
             } else if (JOptionPane.NO_OPTION == response) {
-//                Main.frame.dispatchEvent(new WindowEvent(Main.frame, Main.WindowEvent.WINDOW_CLOSING));
-                Main.frame.dispose();
+//                Main.slotsFrame.dispatchEvent(new WindowEvent(Main.slotsFrame, Main.WindowEvent.WINDOW_CLOSING));
+                Main.slotsFrame.dispose();
                 Main.scoreFrame.dispose();
                 Main.upgradeFrame.dispose();
             }

@@ -3,32 +3,38 @@ import java.awt.*;
 
 
 public class Main {
-    static JFrame frame = new JFrame();
+    static JFrame startFrame = new JFrame();
+    static JFrame slotsFrame = new JFrame();
     static JFrame scoreFrame = new JFrame();
     static JFrame upgradeFrame = new JFrame();
+    static JFrame rouletteFrame = new JFrame();
     static int startcordx = Toolkit.getDefaultToolkit().getScreenSize().width/7-100;
     static int startcordy = 50;
     public static void main(String[] args) {
 
 //Main Frame ----------------------------------------------------------------------------------------------------
-        frame.setBounds(startcordx, startcordy, 1300, 800);
 //        frame.setResizable(false);
 
-        SlotsPanel panel = new SlotsPanel();
-
-        ScoresMouseListener score = new ScoresMouseListener();
+        StartMouseListener start = new StartMouseListener();
         SlotsMouseListener slots = new SlotsMouseListener();
+        ScoresMouseListener score = new ScoresMouseListener();
         UpgradesMouseListener upg = new UpgradesMouseListener();
-        MyKeyListener keylisten = new MyKeyListener();
+        RouletteMouseListener rou = new RouletteMouseListener();
 
-        panel.setFocusable(true);
-        panel.addMouseListener(slots);
-        frame.add(panel);
-        frame.setVisible(true);
-
-
+        startFrame.addMouseListener(start);
+        slotsFrame.addMouseListener(slots);
         scoreFrame.addMouseListener(score);
         upgradeFrame.addMouseListener(upg);
+        rouletteFrame.addMouseListener(rou);
+
+        startFrame.setBounds(startcordx, startcordy, 1000, 750);
+        StartPanel panel = new StartPanel();
+        panel.setFocusable(true);
+        panel.addMouseListener(slots);
+        startFrame.add(panel);
+        startFrame.setVisible(true);
+
+
 
 
 //Starting Frame ----------------------------------------------------------------------------------------------------
