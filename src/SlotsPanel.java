@@ -53,51 +53,15 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     }
 //Roll Method ------------------------------------------------------------------------------------------------------------
     public BufferedImage roll(int a) {
-        try {
-            Cherry = ImageIO.read(new File("Images/Roll parts/Cherry.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Lemon = ImageIO.read(new File("Images/Roll parts/Lemon.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Melon = ImageIO.read(new File("Images/Roll parts/Melon.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Heart = ImageIO.read(new File("Images/Roll parts/Heart.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Bell = ImageIO.read(new File("Images/Roll parts/Bell.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Shoe = ImageIO.read(new File("Images/Roll parts/Shoe.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Diamond = ImageIO.read(new File("Images/Roll parts/Diamond.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Bar = ImageIO.read(new File("Images/Roll parts/Bar.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            Seven = ImageIO.read(new File("Images/Roll parts/Seven.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        try {Cherry = ImageIO.read(new File("Images/Roll parts/Cherry.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Lemon = ImageIO.read(new File("Images/Roll parts/Lemon.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Melon = ImageIO.read(new File("Images/Roll parts/Melon.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Heart = ImageIO.read(new File("Images/Roll parts/Heart.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Bell = ImageIO.read(new File("Images/Roll parts/Bell.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Shoe = ImageIO.read(new File("Images/Roll parts/Shoe.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Diamond = ImageIO.read(new File("Images/Roll parts/Diamond.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Bar = ImageIO.read(new File("Images/Roll parts/Bar.png"));} catch (IOException e) {e.printStackTrace();}
+        try {Seven = ImageIO.read(new File("Images/Roll parts/Seven.png"));} catch (IOException e) {e.printStackTrace();}
         BufferedImage[] symbols = {Cherry, Lemon, Melon, Heart, Bell, Shoe, Diamond, Bar, Seven};
         for (int i = 0; i < 9; i++) {
             symbols[i] = resize(symbols[i], 63, 89);
