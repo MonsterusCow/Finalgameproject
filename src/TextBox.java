@@ -1,4 +1,5 @@
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -35,12 +36,12 @@ public class TextBox {
         this.g = g;
     }
 
-    public void draw(){
+    public void draw(int size){
         g.setColor(bc);
         g.fillPolygon(x, y, 4);
-        g.setFont(new Font("Arial", Font.PLAIN, 20));
+        g.setFont(new Font("Arial", Font.PLAIN, size));
         g.setColor(Color.black);
-        center = ((x[1]-x[0])-length)/2;
+        center = (((x[1]-x[0])-length)/2)/((int)((size/20.0)*1.5));
         if(center < 0){
             center = 0;
         }
@@ -80,4 +81,6 @@ public class TextBox {
     public int getyB(){
         return y[2];
     }
+
+
 }

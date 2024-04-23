@@ -8,7 +8,7 @@ public class StartMouseListener implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         System.out.println("x:" + (MouseInfo.getPointerInfo().getLocation().x - Main.startFrame.getX()) + " y:" + (MouseInfo.getPointerInfo().getLocation().y - (Main.startFrame.getY()+30)));
-
+        System.out.println("d");
     }
     @Override
     public void mousePressed(MouseEvent e) {

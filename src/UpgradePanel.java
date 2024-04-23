@@ -35,7 +35,7 @@ public class UpgradePanel extends JPanel implements ImageObserver {
         yframe = Main .upgradeFrame.getY();
 
         TextBox box = new TextBox(Color.black, Color.black, new int[]{300, 600, 600, 300}, new int[]{50, 50, 425, 425}, "", g);
-        box.draw();
+        box.draw(20);
 
 
 
@@ -51,28 +51,28 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                 }
             }
             if (buyAuto != null) {
-                buyAuto.draw();
+                buyAuto.draw(20);
             }
             if (auto != null) {
-                auto.draw();
+                auto.draw(20);
             }
 
 
             if (autoBought){
                 if (SlotsPanel.timerWait > 0) {
                     reduceTime = new TextBox(active, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "300 Points = -2 Timer Wait", g);
-                    reduceTime.draw();
+                    reduceTime.draw(20);
                 } else {
                     reduceTime = new TextBox(down, Color.black, new int[]{320, 580, 580, 320}, new int[]{170, 170, 245, 245}, "300 Points = -2 Timer Wait", g);
-                    reduceTime.draw();
+                    reduceTime.draw(20);
                 }
             }
 
         if (error) {
             TextBox nuhuh = new TextBox(Color.red, Color.black, new int[]{50, Main.upgradeFrame.getWidth() - 50, Main.upgradeFrame.getWidth() - 50, 50}, new int[]{50, 50, Main.upgradeFrame.getHeight() - 50, Main.upgradeFrame.getHeight() - 50}, "Not enough points to buy", g);
-            nuhuh.draw();
+            nuhuh.draw(20);
             affirm = new TextBox(active, Color.black, new int[]{nuhuh.getxTLBL() + 40, nuhuh.getxTRBR() - 40, nuhuh.getxTRBR() - 40, nuhuh.getxTLBL() + 40}, new int[]{nuhuh.getyB() - 50, nuhuh.getyB() - 50, nuhuh.getyB() - 10, nuhuh.getyB() - 10}, "ok", g);
-            affirm.draw();
+            affirm.draw(20);
         }
 
         TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);

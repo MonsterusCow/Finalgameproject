@@ -242,17 +242,17 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         g.fillPolygon(new int[]{75, 425,425, 75}, new int[]{75, 75, 575, 575}, 4);
 //        scoresheet
         TextBox scoresheetbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{100, 100, 170, 170}, "Press for score sheet :)", g);
-        scoresheetbox.draw();
+        scoresheetbox.draw(20);
 //        Points
         TextBox pointsbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{200, 200, 270, 270}, "Points:"+points, g);
-        pointsbox.draw();
+        pointsbox.draw(20);
 //        UpgradesSlotsPanel
         TextBox upgradebox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405,405, 95}, new int[]{300, 300, 370, 370}, "Press for upgrades", g);
-        upgradebox.draw();
+        upgradebox.draw(20);
 //        auto timer
         TextBox autoTimer = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{400, 400, 470, 470}, "Auto Timer:" + auto, g);
         if (UpgradePanel.autoo) {
-            autoTimer.draw();
+            autoTimer.draw(20);
         }
 //        exit X
         TextBox exit = new TextBox(UpgradePanel.Ximg, "Images/Upgrade Stuff/X.png", new int[] {5, 40, 40, 5}, new int[] {5, 5, 40, 40}, g);
@@ -275,9 +275,9 @@ public class SlotsPanel extends JPanel implements ImageObserver {
                 Main.upgradeFrame.setVisible(true);
             }
             if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
-                Main.slotsFrame.dispose();
-                Main.scoreFrame.dispose();
-                Main.upgradeFrame.dispose();
+                timer = false;
+
+                Main.slotsFrame.setVisible(false);
             }
             SlotsMouseListener.clicked = false;
         }

@@ -30,10 +30,16 @@ public class Main {
         startFrame.setBounds(startcordx, startcordy, 1000, 750);
         StartPanel panel = new StartPanel();
         panel.setFocusable(true);
-        panel.addMouseListener(slots);
+        panel.addMouseListener(start);
         startFrame.add(panel);
         startFrame.setVisible(true);
-
+//
+//        slotsFrame.setBounds(startcordx, startcordy, 1000, 750);
+//        SlotsPanel panel = new SlotsPanel();
+//        panel.setFocusable(true);
+//        panel.addMouseListener(slots);
+//        slotsFrame.add(panel);
+//        slotsFrame.setVisible(true);
 
 
 
@@ -44,5 +50,26 @@ public class Main {
 
 
 
+    }
+
+    static public int getFromLeftSide(JFrame frame, int number){
+        return (frame.getWidth())-((frame.getWidth())-number);
+    }
+    static public int getFromRighSide(JFrame frame, int number){
+        return frame.getWidth()-number;
+    }
+    static public  int getFromTopSide(JFrame frame, int number){
+        return (frame.getHeight())-((frame.getHeight())-number);
+    }
+    static public int getFromBottomSide(JFrame frame, int number){
+        return frame.getHeight()-number;
+    }
+
+    static public void exitAll() {
+        startFrame.dispose();
+        rouletteFrame.dispose();
+            slotsFrame.dispose();
+            scoreFrame.dispose();
+            upgradeFrame.dispose();
     }
 }
