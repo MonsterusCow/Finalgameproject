@@ -123,8 +123,6 @@ public class UpgradePanel extends JPanel implements ImageObserver {
                 Main.upgradeFrame.setVisible(false);
             }
 
-
-
             UpgradesMouseListener.clicked = false;
         }
 

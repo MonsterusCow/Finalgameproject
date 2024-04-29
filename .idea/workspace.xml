@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="SPIN NO WORK">
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="disapear after spin">
+      <change afterPath="$PROJECT_DIR$/src/WindowListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R10.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R11.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R12.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R13.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R14.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R15.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R5.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R6.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R7.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R8.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Routlette/R9.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Routlette/R9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RoulettePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoulettePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlotsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpgradePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,14 +325,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714062616530</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="disapear after spin">
+      <option name="closed" value="true" />
+      <created>1714145198267</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1714145198267</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2nd, a bunch" />
     <MESSAGE value="many" />
     <MESSAGE value="turn arround" />
     <MESSAGE value="many things" />
@@ -368,6 +364,7 @@
     <MESSAGE value="glitches fixed" />
     <MESSAGE value="roulette kinda working" />
     <MESSAGE value="SPIN NO WORK" />
-    <option name="LAST_COMMIT_MESSAGE" value="SPIN NO WORK" />
+    <MESSAGE value="disapear after spin" />
+    <option name="LAST_COMMIT_MESSAGE" value="disapear after spin" />
   </component>
 </project>
