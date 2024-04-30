@@ -32,18 +32,22 @@ public class StartPanel extends JPanel implements ImageObserver {
 
         if (StartMouseListener.clicked) {
             if (slots.Clicked(StartMouseListener.clickedx,StartMouseListener.clickedy)){
-                Main.slotsFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 1000, 750);
+                Main.slotsFrame.setBounds(Main.slotsFrame.getX(), Main.slotsFrame.getY(), 1000, 750);
                 Main.slotsFrame.add(new SlotsPanel());
+                if (Main.slotsFrame != null) {
+                    Main.slotsFrame.dispose();
+                }
                 Main.slotsFrame.setVisible(true);
-                SlotsPanel.active = true;
             }
             if (rout.Clicked(StartMouseListener.clickedx,StartMouseListener.clickedy)){
-                Main.rouletteFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width/7, 130, 1000, 750);
+                Main.rouletteFrame.setBounds(Main.rouletteFrame.getX(), Main.rouletteFrame.getY(), 1000, 750);
                 Main.rouletteFrame.add(new RoulettePanel());
+                if (Main.rouletteFrame != null) {
+                    Main.rouletteFrame.dispose();
+                }
                 Main.rouletteFrame.setVisible(true);
-                RoulettePanel.active = true;
             }
-            if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)){
+            if (exit.Clicked(StartMouseListener.clickedx, StartMouseListener.clickedy)){
                 Main.exitAll();
 
             }

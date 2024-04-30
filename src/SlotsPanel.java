@@ -37,6 +37,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         @Override public void windowDeiconified(WindowEvent e) {}
         @Override public void windowActivated(WindowEvent e) {
             active = true;
+            repaint();
         }
         @Override public void windowDeactivated(WindowEvent e) {
             active = false;
@@ -145,174 +146,172 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         Main.slotsFrame.addWindowListener(winlis);
 
         //Draw ----------------------------------------------------------------------------------------------------------------------------------------------------
-if (active) {
-    try {
-        Casino = ImageIO.read(new File("Images/Casino.png"));
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+            try {
+                Casino = ImageIO.read(new File("Images/Casino.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 //        g.drawImage( Casino, 0, 0, this);
 
-    try {
-        slothandledn = ImageIO.read(new File("Images/Machine Parts/slothandledn.png"));
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    try {
-        slothandleup = ImageIO.read(new File("Images/Machine Parts/slothandleup.png"));
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    try {
-        slotmachineful = ImageIO.read(new File("Images/Machine Parts/slotmachineful.png"));
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    try {
-        slotmachineemp = ImageIO.read(new File("Images/Machine Parts/slotmachineemp.png"));
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    slots[0] = slothandledn;
-    slots[1] = slothandleup;
-    slots[2] = slotmachineful;
-    slots[3] = slotmachineemp;
+            try {
+                slothandledn = ImageIO.read(new File("Images/Machine Parts/slothandledn.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                slothandleup = ImageIO.read(new File("Images/Machine Parts/slothandleup.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                slotmachineful = ImageIO.read(new File("Images/Machine Parts/slotmachineful.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                slotmachineemp = ImageIO.read(new File("Images/Machine Parts/slotmachineemp.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            slots[0] = slothandledn;
+            slots[1] = slothandleup;
+            slots[2] = slotmachineful;
+            slots[3] = slotmachineemp;
 
 
-    if (up) {
-        g.drawImage(slothandleup, 640, 89, this);
-    } else {
-        g.drawImage(slothandledn, 640, 69, this);
+            if (up) {
+                g.drawImage(slothandleup, 640, 89, this);
+            } else {
+                g.drawImage(slothandledn, 640, 69, this);
 
-    }
-    g.drawImage(slotmachineful, 432, 60, this);
+            }
+            g.drawImage(slotmachineful, 432, 60, this);
 
-    //When click handle ----------------------------------------------------------------------------------------------------------------------------------------------------
+            //When click handle ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-    if (SlotsMouseListener.clicked) {
-        if (!UpgradePanel.autoo) {
-            if (SlotsMouseListener.clickedx >= 887 && SlotsMouseListener.clickedx <= 930) {
-                if (SlotsMouseListener.clickedy >= 237 && SlotsMouseListener.clickedy <= 402) {
-                    up = false;
-                    SlotsMouseListener.clickedx = 0;
-                    SlotsMouseListener.clickedy = 0;
-                    timer = true;
-                    if (wait == 0) {
-                        points -= 10;
+            if (SlotsMouseListener.clicked) {
+                if (!UpgradePanel.autoo) {
+                    if (SlotsMouseListener.clickedx >= 887 && SlotsMouseListener.clickedx <= 930) {
+                        if (SlotsMouseListener.clickedy >= 237 && SlotsMouseListener.clickedy <= 402) {
+                            up = false;
+                            SlotsMouseListener.clickedx = 0;
+                            SlotsMouseListener.clickedy = 0;
+                            timer = true;
+                            if (wait == 0) {
+                                points -= 10;
+                            }
+                        }
                     }
                 }
             }
-        }
-    }
 
-    //Timer to spin and put handle up ----------------------------------------------------------------------------------------------------------------------------------------------------
-    if (timer || UpgradePanel.autoo) {
-        if (auto == 0) {
-            wait++;
-            if (wait % 2 == 0) {
-                perm1 = roll(0);
-                perm2 = roll(1);
-                perm3 = roll(2);
-                g.drawImage(perm1, 572, 293, this);
-                g.drawImage(perm2, 658, 293, this);
-                g.drawImage(perm3, 746, 293, this);
-            }
-            if (wait >= 20) {
-                if (!UpgradePanel.autoo) {
-                    timer = false;
+            //Timer to spin and put handle up ----------------------------------------------------------------------------------------------------------------------------------------------------
+            if (timer || UpgradePanel.autoo) {
+                if (auto == 0) {
+                    wait++;
+                    if (wait % 2 == 0) {
+                        perm1 = roll(0);
+                        perm2 = roll(1);
+                        perm3 = roll(2);
+                        g.drawImage(perm1, 572, 293, this);
+                        g.drawImage(perm2, 658, 293, this);
+                        g.drawImage(perm3, 746, 293, this);
+                    }
+                    if (wait >= 20) {
+                        if (!UpgradePanel.autoo) {
+                            timer = false;
+                        } else {
+                            auto = timerWait;
+                        }
+                        up = true;
+                        wait = 0;
+                        points();
+                    }
                 } else {
-                    auto = timerWait;
-                }
-                up = true;
-                wait = 0;
-                points();
-            }
-        } else {
-            auto--;
-            if (auto == 1) {
-                up = false;
-                if (wait == 0) {
-                    points -= 10;
+                    auto--;
+                    if (auto == 1) {
+                        up = false;
+                        if (wait == 0) {
+                            points -= 10;
+                        }
+                    }
                 }
             }
-        }
-    }
-    g.drawImage(perm1, 572, 293, this);
-    g.drawImage(perm2, 658, 293, this);
-    g.drawImage(perm3, 746, 293, this);
+            g.drawImage(perm1, 572, 293, this);
+            g.drawImage(perm2, 658, 293, this);
+            g.drawImage(perm3, 746, 293, this);
 
-    //Drawing stuff ----------------------------------------------------------------------------------------------------------------------------------------------------
+            //Drawing stuff ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //main one
-    g.fillPolygon(new int[]{75, 425, 425, 75}, new int[]{75, 75, 575, 575}, 4);
+            //main one
+            g.fillPolygon(new int[]{75, 425, 425, 75}, new int[]{75, 75, 575, 575}, 4);
 //        scoresheet
-    TextBox scoresheetbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{100, 100, 170, 170}, "Press for score sheet :)", g);
-    scoresheetbox.draw(20);
+            TextBox scoresheetbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{100, 100, 170, 170}, "Press for score sheet :)", g);
+            scoresheetbox.draw(20);
 //        Points
-    TextBox pointsbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{200, 200, 270, 270}, "Points:" + points, g);
-    pointsbox.draw(20);
+            TextBox pointsbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{200, 200, 270, 270}, "Points:" + points, g);
+            pointsbox.draw(20);
 //        UpgradesSlotsPanel
-    TextBox upgradebox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{300, 300, 370, 370}, "Press for upgrades", g);
-    upgradebox.draw(20);
+            TextBox upgradebox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{300, 300, 370, 370}, "Press for upgrades", g);
+            upgradebox.draw(20);
 //        auto timer
-    TextBox autoTimer = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{400, 400, 470, 470}, "Auto Timer:" + auto, g);
-    if (UpgradePanel.autoo) {
-        autoTimer.draw(20);
-    }
+            TextBox autoTimer = new TextBox(new Color(17, 48, 182), Color.black, new int[]{95, 405, 405, 95}, new int[]{400, 400, 470, 470}, "Auto Timer:" + auto, g);
+            if (UpgradePanel.autoo) {
+                autoTimer.draw(20);
+            }
 //        exit X
-    TextBox exit = new TextBox(UpgradePanel.Ximg, "Images/Upgrade Stuff/X.png", new int[]{5, 40, 40, 5}, new int[]{5, 5, 40, 40}, g);
-    exit.drawImgBox(this);
+            TextBox exit = new TextBox(UpgradePanel.Ximg, "Images/Upgrade Stuff/X.png", new int[]{5, 40, 40, 5}, new int[]{5, 5, 40, 40}, g);
+            exit.drawImgBox(this);
 
 
 //Clicking info buttons----------------------------------------------------------------------------------------------------------------------------------------------------
 
-    if (SlotsMouseListener.clicked) {
-        if (scoresheetbox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
-            Main.scoreFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width / 7, 130, 900, 525);
-            ScorePanel scorepanel = new ScorePanel();
-            Main.scoreFrame.add(scorepanel);
-            Main.scoreFrame.setVisible(true);
-        }
-        if (upgradebox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
-            Main.upgradeFrame.setBounds(UpgradePanel.xframe, UpgradePanel.yframe, 900, 525);
-            UpgradePanel upgradeFrame = new UpgradePanel();
-            Main.upgradeFrame.add(upgradeFrame);
-            Main.upgradeFrame.setVisible(true);
-        }
-        if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
-            timer = false;
+            if (SlotsMouseListener.clicked) {
+                if (scoresheetbox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
+                    Main.scoreFrame.setBounds(Toolkit.getDefaultToolkit().getScreenSize().width / 7, 130, 900, 525);
+                    ScorePanel scorepanel = new ScorePanel();
+                    Main.scoreFrame.add(scorepanel);
+                    Main.scoreFrame.setVisible(true);
+                }
+                if (upgradebox.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
+                    Main.upgradeFrame.setBounds(UpgradePanel.xframe, UpgradePanel.yframe, 900, 525);
+                    UpgradePanel upgradeFrame = new UpgradePanel();
+                    Main.upgradeFrame.add(upgradeFrame);
+                    Main.upgradeFrame.setVisible(true);
+                }
+                if (exit.Clicked(SlotsMouseListener.clickedx, SlotsMouseListener.clickedy)) {
+                    timer = false;
 
-            Main.slotsFrame.setVisible(false);
-        }
-        SlotsMouseListener.clicked = false;
-    }
+                    Main.slotsFrame.setVisible(false);
+                }
+                SlotsMouseListener.clicked = false;
+            }
 
 // If points = 0 (end)----------------------------------------------------------------------------------------------------------------------------------------------------
 
-    if (points <= -10) {
-        int response = JOptionPane.showConfirmDialog(null, "Womp Womp you lost everything and you are now homeless. Restart?", "You Lost", JOptionPane.YES_NO_OPTION);
-        if (JOptionPane.YES_OPTION == response) {
-            reset();
-        } else if (JOptionPane.NO_OPTION == response) {
+            if (points <= -10) {
+                int response = JOptionPane.showConfirmDialog(null, "Womp Womp you lost everything and you are now homeless. Restart?", "You Lost", JOptionPane.YES_NO_OPTION);
+                if (JOptionPane.YES_OPTION == response) {
+                    reset();
+                } else if (JOptionPane.NO_OPTION == response) {
 //                Main.slotsFrame.dispatchEvent(new WindowEvent(Main.slotsFrame, Main.WindowEvent.WINDOW_CLOSING));
-            Main.slotsFrame.dispose();
-            Main.scoreFrame.dispose();
-            Main.upgradeFrame.dispose();
-        }
-    }
+                    Main.slotsFrame.dispose();
+                    Main.scoreFrame.dispose();
+                    Main.upgradeFrame.dispose();
+                }
+            }
 
 // Trywait (end)----------------------------------------------------------------------------------------------------------------------------------------------------
 
+        if (active) {
 
-    try {
-        Thread.sleep(20);
-    } catch (Exception e) {
-        System.out.println(e);
+            try {
+                Thread.sleep(20);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            //repaint--------------------------------------------------------------------------
+            repaint();
+        }
     }
-}
-        //repaint--------------------------------------------------------------------------
-        repaint();
-    }
-
-
 }

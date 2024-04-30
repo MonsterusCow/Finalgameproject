@@ -26,9 +26,12 @@ public class RoulettePanel extends JPanel implements ImageObserver {
         @Override public void windowDeiconified(WindowEvent e) {}
         @Override public void windowActivated(WindowEvent e) {
             active = true;
+            repaint();
+//            System.out.println("asdassazasfsvsdwe");
         }
         @Override public void windowDeactivated(WindowEvent e) {
             active = false;
+//            System.out.println("falsseee");
         }
     };
 
@@ -36,15 +39,13 @@ public class RoulettePanel extends JPanel implements ImageObserver {
     BufferedImage Ximg;
 
     public RoulettePanel() {
-        setBackground(new Color(55, 208, 30));
+        setBackground(new Color(32, 94, 16));
+        Main.rouletteFrame.addWindowListener(winlis);
     }
 
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Main.rouletteFrame.addWindowListener(winlis);
-
-        if (active) {
+            super.paintComponent(g);
             TextBox exit = new TextBox(Ximg, "Images/Upgrade Stuff/X.png", new int[]{5, 40, 40, 5}, new int[]{5, 5, 40, 40}, g);
             exit.drawImgBox(this);
 
@@ -54,11 +55,12 @@ public class RoulettePanel extends JPanel implements ImageObserver {
             }
 
             if (RouletteMouseListener.clicked) {
+                System.out.println("clicked");
                 if (roulette.Clicked(RouletteMouseListener.clickedx, RouletteMouseListener.clickedy)) {
                     spin = true;
                     System.out.println(spin + "spin");
                 }
-                if (exit.Clicked(UpgradesMouseListener.clickedx, UpgradesMouseListener.clickedy)) {
+                if (exit.Clicked(RouletteMouseListener.clickedx, RouletteMouseListener.clickedy)) {
                     Main.rouletteFrame.setVisible(false);
                 }
                 RouletteMouseListener.clicked = false;
@@ -89,16 +91,16 @@ public class RoulettePanel extends JPanel implements ImageObserver {
             }
             roulette.drawImgBox(this);
 
+        if (active) {
 
             try {
                 Thread.sleep(20);
             } catch (Exception e) {
                 System.out.println(e);
             }
+            //repaint--------------------------------------------------------------------------
+            repaint();
         }
-
-        //repaint--------------------------------------------------------------------------
-        repaint();
     }
 }
 

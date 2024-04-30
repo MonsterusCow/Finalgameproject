@@ -12,8 +12,8 @@ public class RouletteMouseListener implements MouseListener {
     }
     @Override
     public void mousePressed(MouseEvent e) {
-        clickedx = MouseInfo.getPointerInfo().getLocation().x - Main.slotsFrame.getX();
-        clickedy = MouseInfo.getPointerInfo().getLocation().y - Main.slotsFrame.getY();
+        clickedx = MouseInfo.getPointerInfo().getLocation().x - Main.rouletteFrame.getX();
+        clickedy = MouseInfo.getPointerInfo().getLocation().y - Main.rouletteFrame.getY();
         clicked = true;
     }
     @Override

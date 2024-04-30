@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="disapear after spin">
-      <change afterPath="$PROJECT_DIR$/src/WindowListener.java" afterDir="false" />
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="how win listen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RouletteMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RouletteMouseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RoulettePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoulettePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlotsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UpgradePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpgradePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,14 +332,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714145198267</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="how win listen">
+      <option name="closed" value="true" />
+      <created>1714409307592</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1714409307593</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="many" />
     <MESSAGE value="turn arround" />
     <MESSAGE value="many things" />
     <MESSAGE value="changed everything" />
@@ -365,6 +371,7 @@
     <MESSAGE value="roulette kinda working" />
     <MESSAGE value="SPIN NO WORK" />
     <MESSAGE value="disapear after spin" />
-    <option name="LAST_COMMIT_MESSAGE" value="disapear after spin" />
+    <MESSAGE value="how win listen" />
+    <option name="LAST_COMMIT_MESSAGE" value="how win listen" />
   </component>
 </project>
