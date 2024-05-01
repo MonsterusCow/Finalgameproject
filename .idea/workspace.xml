@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="how win listen">
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="FUCK YESS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RouletteMouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RouletteMouseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RoulettePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoulettePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlotsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlotsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StartPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartPanel.java" afterDir="false" />
@@ -340,14 +338,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714409307593</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="FUCK YESS">
+      <option name="closed" value="true" />
+      <created>1714494744568</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1714494744568</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="turn arround" />
     <MESSAGE value="many things" />
     <MESSAGE value="changed everything" />
     <MESSAGE value="Pictures" />
@@ -372,6 +377,7 @@
     <MESSAGE value="SPIN NO WORK" />
     <MESSAGE value="disapear after spin" />
     <MESSAGE value="how win listen" />
-    <option name="LAST_COMMIT_MESSAGE" value="how win listen" />
+    <MESSAGE value="FUCK YESS" />
+    <option name="LAST_COMMIT_MESSAGE" value="FUCK YESS" />
   </component>
 </project>

@@ -15,7 +15,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     boolean up = true;
     boolean timer = false;
     int wait = 0;
-    static int points = 1100;
+    static int points = 500;
     int[] lastrolled = new int[3];
     int auto = 0;
     static int timerWait = 30;
@@ -27,7 +27,6 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     int[] scores = new int[] {100,200,300,400,500,700,900,1000,2000};
     BufferedImage first, second, third;
     BufferedImage perm1, perm2, perm3;
-    BufferedImage Casino;
 
     WindowListener winlis = new WindowListener() {
         @Override public void windowOpened(WindowEvent e) {}
@@ -45,7 +44,6 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     };
 
 //reset Method ------------------------------------------------------------------------------------------------------------
-
     public void reset() {
     up =true;
     timer =false;
@@ -57,7 +55,6 @@ public class SlotsPanel extends JPanel implements ImageObserver {
     UpgradePanel.autoo = false;
     UpgradePanel.autoBought = false;
 }
-
 //Resize Method ------------------------------------------------------------------------------------------------------------
     public static BufferedImage resize(BufferedImage img, int newW, int newH) {
         Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
@@ -146,12 +143,7 @@ public class SlotsPanel extends JPanel implements ImageObserver {
         Main.slotsFrame.addWindowListener(winlis);
 
         //Draw ----------------------------------------------------------------------------------------------------------------------------------------------------
-            try {
-                Casino = ImageIO.read(new File("Images/Casino.png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-//        g.drawImage( Casino, 0, 0, this);
+
 
             try {
                 slothandledn = ImageIO.read(new File("Images/Machine Parts/slothandledn.png"));

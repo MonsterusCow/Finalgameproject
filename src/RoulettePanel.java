@@ -54,6 +54,11 @@ public class RoulettePanel extends JPanel implements ImageObserver {
                 roulette.drawImgBox(this);
             }
 
+        TextBox pointsbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{roulette.getxTLBL(), roulette.getxTLBL()+150, roulette.getxTLBL()+150, roulette.getxTLBL()}, new int[]{roulette.getyT()-120, roulette.getyT()-120, roulette.getyT()-20, roulette.getyT()-20}, "Points:" + SlotsPanel.points, g);
+        pointsbox.draw(20);
+        TextBox betbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{roulette.getxTRBR()-150, roulette.getxTRBR(), roulette.getxTRBR(), roulette.getxTRBR()-150}, new int[]{roulette.getyT()-120, roulette.getyT()-120, roulette.getyT()-20, roulette.getyT()-20}, "Click to bet", g);
+        betbox.draw(20);
+
             if (RouletteMouseListener.clicked) {
                 System.out.println("clicked");
                 if (roulette.Clicked(RouletteMouseListener.clickedx, RouletteMouseListener.clickedy)) {
@@ -64,7 +69,6 @@ public class RoulettePanel extends JPanel implements ImageObserver {
                     Main.rouletteFrame.setVisible(false);
                 }
                 RouletteMouseListener.clicked = false;
-
             }
 
             if (!spin) {
@@ -85,6 +89,7 @@ public class RoulettePanel extends JPanel implements ImageObserver {
                     }
                 } else {
                     spin = false;
+                    SlotsPanel.points += 100;
                 }
             } else {
                 roulette = new TextBox(UpgradePanel.Ximg, "Images/Routlette/R" + (draw) + ".png", new int[]{Main.rouletteFrame.getWidth() / 2 - 200, Main.rouletteFrame.getWidth() / 2 + 200, Main.rouletteFrame.getWidth() / 2 + 200, Main.rouletteFrame.getWidth() / 2 - 200}, new int[]{Main.rouletteFrame.getHeight() / 2 - 200, Main.rouletteFrame.getHeight() / 2 - 200, Main.rouletteFrame.getHeight() / 2 + 200, Main.rouletteFrame.getHeight() / 2 + 200}, g);
