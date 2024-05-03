@@ -47,7 +47,7 @@ public class Main {
 
 //Starting Frame ----------------------------------------------------------------------------------------------------
         
-        JOptionPane.showMessageDialog(null, "Hi, welcome to gambling. You can press the lever to start spinning.\nPress the point list to see the spins you can get");
+//        JOptionPane.showMessageDialog(null, "Hi, welcome to gambling. You can press the lever to start spinning.\nPress the point list to see the spins you can get");
 
 
 

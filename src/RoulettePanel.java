@@ -10,8 +10,6 @@ import java.io.IOException;
 
 public class RoulettePanel extends JPanel implements ImageObserver {
 
-    BufferedImage R0,R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15;
-    BufferedImage[] symbols = {R0,R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15};
     static int draw = 0;
     static int ticks = 64;
     static boolean dra = true;
@@ -36,7 +34,7 @@ public class RoulettePanel extends JPanel implements ImageObserver {
     };
 
     static TextBox store, roulette;
-    BufferedImage Ximg;
+    BufferedImage Ximg, scores;
 
     public RoulettePanel() {
         setBackground(new Color(32, 94, 16));
@@ -58,6 +56,16 @@ public class RoulettePanel extends JPanel implements ImageObserver {
         pointsbox.draw(20);
         TextBox betbox = new TextBox(new Color(17, 48, 182), Color.black, new int[]{roulette.getxTRBR()-150, roulette.getxTRBR(), roulette.getxTRBR(), roulette.getxTRBR()-150}, new int[]{roulette.getyT()-120, roulette.getyT()-120, roulette.getyT()-20, roulette.getyT()-20}, "Click to bet", g);
         betbox.draw(20);
+        try {
+            scores = ImageIO.read(new File("Images/Routlette/scores.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        scores = SlotsPanel.resize(scores, 150, 500);
+        g.drawImage(scores, roulette.getxTLBL() - 200, roulette.getyB()-roulette.getyT()-250, this);
+
+
+
 
             if (RouletteMouseListener.clicked) {
                 System.out.println("clicked");
