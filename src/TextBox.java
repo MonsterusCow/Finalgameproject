@@ -28,6 +28,12 @@ public class TextBox {
         length = text.length()*10;
     }
 
+    public TextBox(int[] x, int[] y, Graphics g){
+        this.x = x;
+        this.y = y;
+        this.g = g;
+    }
+
     public TextBox(BufferedImage image, String direct, int[] x, int[] y, Graphics g){
         this.image = image;
         this.direct = direct;
@@ -52,7 +58,10 @@ public class TextBox {
         try { image = ImageIO.read(new File(direct)); } catch (IOException e) { e.printStackTrace(); }
         image = SlotsPanel.resize(image, (this.x[1]-this.x[0]), (this.y[2]-this.y[0]));
         g.drawImage(image, this.x[0], this.y[0], thi);
+    }
 
+    public void drawClickBox(){
+        g.drawPolygon(x, y, 4);
     }
 
     public void erase(){

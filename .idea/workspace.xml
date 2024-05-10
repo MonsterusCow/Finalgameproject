@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="stuff works">
-      <change afterPath="$PROJECT_DIR$/Images/Routlette/scores.png" afterDir="false" />
+    <list default="true" id="076156ff-7971-4387-ac9e-b175ce95a0f1" name="Changes" comment="making betting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RoulettePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoulettePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextBox.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,14 +353,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714580896121</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="making betting">
+      <option name="closed" value="true" />
+      <created>1714753802705</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1714753802705</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed everything" />
     <MESSAGE value="Pictures" />
     <MESSAGE value="Slots work" />
     <MESSAGE value="boxes :)" />
@@ -386,6 +392,7 @@
     <MESSAGE value="how win listen" />
     <MESSAGE value="FUCK YESS" />
     <MESSAGE value="stuff works" />
-    <option name="LAST_COMMIT_MESSAGE" value="stuff works" />
+    <MESSAGE value="making betting" />
+    <option name="LAST_COMMIT_MESSAGE" value="making betting" />
   </component>
 </project>
