@@ -17,8 +17,9 @@ public class RoulettePanel extends JPanel implements ImageObserver {
     static boolean active = false;
     static boolean spin = false;
     int[] xscoreBoxes = {0, 50, 100, 150};
-    int[] yscoreBoxes = {0, 88, 176, 264, 352, 440, 528, 616, 704, 792, 880, 968, 1056};
+    int[] yscoreBoxes = {0, 41, 83, 124, 166, 207, 249, 290, 332, 373, 415, 456, 498};
     ArrayList<TextBox> clickscores = new ArrayList<TextBox>(36);
+    ArrayList<TextBox> computerscores = new ArrayList<TextBox>(36);
     static boolean betted = false;
 
 
@@ -40,7 +41,8 @@ public class RoulettePanel extends JPanel implements ImageObserver {
     };
 
     static TextBox store, roulette;
-    BufferedImage Ximg, scores1, scores2;
+    BufferedImage Ximg, scores1, scores2, ball;
+    static int bx, by = -100;
 
     public RoulettePanel() {
         setBackground(new Color(32, 94, 16));
@@ -65,23 +67,29 @@ public class RoulettePanel extends JPanel implements ImageObserver {
         try {
             scores1 = ImageIO.read(new File("Images/Routlette/scores.png"));
             scores2 = ImageIO.read(new File("Images/Routlette/scores.png"));
+             ball = ImageIO.read(new File("Images/Routlette/rouletteball.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
         scores1 = SlotsPanel.resize(scores1, 150, 500);
         scores2 = SlotsPanel.resize(scores2, 150, 500);
+        ball = SlotsPanel.resize(ball, 50, 41);
 
         g.drawImage(scores1, roulette.getxTLBL() - 200, roulette.getyB()-roulette.getyT()-250, this);
         g.drawImage(scores2, roulette.getxTRBR() + 200-scores2.getWidth(), roulette.getyB()-roulette.getyT()-250, this);
-
-        for (int i = 0; i < yscoreBoxes.length-2; i++){
-            for (int j = 0; j < xscoreBoxes.length-2; j++){
+        if (bx != -100){
+            g.drawImage(ball,bx,by,this);
+        }
+        for (int i = 0; i < yscoreBoxes.length-1; i++){
+            for (int j = 0; j < xscoreBoxes.length-1; j++){
                 clickscores.add(new TextBox(new int[]{xscoreBoxes[j]+roulette.getxTLBL() - 200, xscoreBoxes[j+1]+roulette.getxTLBL() - 200, xscoreBoxes[j+1]+roulette.getxTLBL() - 200, xscoreBoxes[j]+roulette.getxTLBL() - 200}, new int[]{yscoreBoxes[i]+roulette.getyB()-roulette.getyT()-250,yscoreBoxes[i]+roulette.getyB()-roulette.getyT()-250, yscoreBoxes[i+1]+roulette.getyB()-roulette.getyT()-250, yscoreBoxes[i+1]+roulette.getyB()-roulette.getyT()-250}, g));
+                computerscores.add(new TextBox(new int[]{xscoreBoxes[j]+roulette.getxTRBR() + 200-scores2.getWidth(), xscoreBoxes[j+1]+roulette.getxTRBR() + 200-scores2.getWidth(), xscoreBoxes[j+1]+roulette.getxTRBR() + 200-scores2.getWidth(), xscoreBoxes[j]+roulette.getxTRBR() + 200-scores2.getWidth()}, new int[]{yscoreBoxes[i]+roulette.getyB()-roulette.getyT()-250,yscoreBoxes[i]+roulette.getyB()-roulette.getyT()-250, yscoreBoxes[i+1]+roulette.getyB()-roulette.getyT()-250, yscoreBoxes[i+1]+roulette.getyB()-roulette.getyT()-250}, g));
             }
         }
-//        for(int i = 0; i < clickscores.size()-1; i++){
-//            clickscores.get(i).drawClickBox();
-//        }
+        for(int i = 0; i < clickscores.size(); i++){
+            clickscores.get(i).drawClickBox();
+            computerscores.get(i).drawClickBox();
+        }
 
 
 
@@ -98,6 +106,9 @@ public class RoulettePanel extends JPanel implements ImageObserver {
                 for(int i = 0; i < clickscores.size()-1; i++){
                     if (clickscores.get(i).Clicked(RouletteMouseListener.clickedx, RouletteMouseListener.clickedy)){
                         System.out.println(i);
+                        bx = xscoreBoxes[i%3]+roulette.getxTLBL() - 200;
+                        by = yscoreBoxes[i/3]+roulette.getyB()-roulette.getyT()-250;
+                        break;
                     }
                 }
 
