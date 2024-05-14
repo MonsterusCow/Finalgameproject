@@ -42,7 +42,7 @@ public class RoulettePanel extends JPanel implements ImageObserver {
 
     static TextBox store, roulette;
     BufferedImage Ximg, scores1, scores2, ball;
-    static int bx, by = -100;
+    static int bx, by, cx, cy = -100;
 
     public RoulettePanel() {
         setBackground(new Color(32, 94, 16));
@@ -80,6 +80,7 @@ public class RoulettePanel extends JPanel implements ImageObserver {
         if (bx != -100){
             g.drawImage(ball,bx,by,this);
         }
+
         for (int i = 0; i < yscoreBoxes.length-1; i++){
             for (int j = 0; j < xscoreBoxes.length-1; j++){
                 clickscores.add(new TextBox(new int[]{xscoreBoxes[j]+roulette.getxTLBL() - 200, xscoreBoxes[j+1]+roulette.getxTLBL() - 200, xscoreBoxes[j+1]+roulette.getxTLBL() - 200, xscoreBoxes[j]+roulette.getxTLBL() - 200}, new int[]{yscoreBoxes[i]+roulette.getyB()-roulette.getyT()-250,yscoreBoxes[i]+roulette.getyB()-roulette.getyT()-250, yscoreBoxes[i+1]+roulette.getyB()-roulette.getyT()-250, yscoreBoxes[i+1]+roulette.getyB()-roulette.getyT()-250}, g));
@@ -90,6 +91,8 @@ public class RoulettePanel extends JPanel implements ImageObserver {
             clickscores.get(i).drawClickBox();
             computerscores.get(i).drawClickBox();
         }
+
+
 
 
 
@@ -119,6 +122,8 @@ public class RoulettePanel extends JPanel implements ImageObserver {
                 if (ticks != 64) {
                     ticks = 64;
                 }
+//                cx = -100;
+//                cy = -100;
             }
             if (spin) {
                 dra = false;
@@ -134,6 +139,13 @@ public class RoulettePanel extends JPanel implements ImageObserver {
                 } else {
                     spin = false;
                     SlotsPanel.points += 100;
+                }
+                int i =(int)(Math.random()*3);
+                int j =(int)(Math.random()*36);
+                cx = xscoreBoxes[i%3]+roulette.getxTRBR() + 200-scores2.getWidth();
+                cy = yscoreBoxes[j/3]+roulette.getyB()-roulette.getyT()-250;
+                if (cx != -100){
+                    g.drawImage(ball,cx,cy,this);
                 }
             } else {
                 roulette = new TextBox(UpgradePanel.Ximg, "Images/Routlette/R" + (draw) + ".png", new int[]{Main.rouletteFrame.getWidth() / 2 - 200, Main.rouletteFrame.getWidth() / 2 + 200, Main.rouletteFrame.getWidth() / 2 + 200, Main.rouletteFrame.getWidth() / 2 - 200}, new int[]{Main.rouletteFrame.getHeight() / 2 - 200, Main.rouletteFrame.getHeight() / 2 - 200, Main.rouletteFrame.getHeight() / 2 + 200, Main.rouletteFrame.getHeight() / 2 + 200}, g);
